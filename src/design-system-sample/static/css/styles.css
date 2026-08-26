@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+
+    padding: .4rem;
+
+    background-color: #090B0D;
+    color: #e8eaec;
+}
+
+div.main {
+    display: grid;
+    grid-template-rows: 85px 1fr;
+}
+
+div.header {
+    font-size: 2rem;
+
+    align-content: center;
+    text-align: center;
+
+    border-bottom-color: #454d53;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+div.content {
+    padding: .4rem;
+}
