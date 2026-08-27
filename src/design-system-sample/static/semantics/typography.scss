@@ -1,0 +1,138 @@
+@import "../primitives/colors.scss";
+@import "../primitives/typography.scss";
+
+.body__small {
+    font-family: var(--typography__font_family--sans);
+    font-size: var(--typography__font_size--sm);
+    font-weight: var(--typography__font_weight--regular);
+    line-height: var(--typography__line_height--normal);
+    letter-spacing: var(--typography__letter_spacing--normal);
+}
+
+.body__small--strong {
+    font-family: var(--typography__font_family--sans);
+    font-size: var(--typography__font_size--sm);
+    font-weight: var(--typography__font_weight--semibold);
+    line-height: var(--typography__line_height--normal);
+    letter-spacing: var(--typography__letter_spacing--normal);
+}
+
+.body__medium {
+    font-family: var(--typography__font_family--sans);
+    font-size: var(--typography__font_size--md);
+    font-weight: var(--typography__font_weight--regular);
+    line-height: var(--typography__line_height--normal);
+    letter-spacing: var(--typography__letter_spacing--normal);
+}
+
+.body__medium--strong {
+    font-family: var(--typography__font_family--sans);
+    font-size: var(--typography__font_size--md);
+    font-weight: var(--typography__font_weight--semibold);
+    line-height: var(--typography__line_height--normal);
+    letter-spacing: var(--typography__letter_spacing--normal);
+}
+
+.body__large {
+    font-family: var(--typography__font_family--sans);
+    font-size: var(--typography__font_size--lg);
+    font-weight: var(--typography__font_weight--regular);
+    line-height: var(--typography__line_height--normal);
+    letter-spacing: var(--typography__letter_spacing--normal);
+}
+
+.body__large--strong {
+    font-family: var(--typography__font_family--sans);
+    font-size: var(--typography__font_size--lg);
+    font-weight: var(--typography__font_weight--semibold);
+    line-height: var(--typography__line_height--normal);
+    letter-spacing: var(--typography__letter_spacing--normal);
+}
+
+.heading__h1 {
+    font-family: var(--typography__font_family--sans);
+    font-size: var(--typography__font_size--4xl);
+    font-weight: var(--typography__font_weight--bold);
+    line-height: var(--typography__line_height--tight);
+    letter-spacing: var(--typography__letter_spacing--tighter);
+}
+
+.heading__h2 {
+    font-family: var(--typography__font_family--sans);
+    font-size: var(--typography__font_size--3xl);
+    font-weight: var(--typography__font_weight--bold);
+    line-height: var(--typography__line_height--tight);
+    letter-spacing: var(--typography__letter_spacing--tighter);
+}
+
+.heading__h3 {
+    font-family: var(--typography__font_family--sans);
+    font-size: var(--typography__font_size--2xl);
+    font-weight: var(--typography__font_weight--bold);
+    line-height: var(--typography__line_height--snug);
+    letter-spacing: var(--typography__letter_spacing--tight);
+}
+
+.heading__h4 {
+    font-family: var(--typography__font_family--sans);
+    font-size: var(--typography__font_size--xl);
+    font-weight: var(--typography__font_weight--semibold);
+    line-height: var(--typography__line_height--snug);
+    letter-spacing: var(--typography__letter_spacing--tight);
+}
+
+.label__small {
+    font-family: var(--typography__font_family--sans);
+    font-size: var(--typography__font_size--xs);
+    font-weight: var(--typography__font_weight--semibold);
+    line-height: var(--typography__line_height--snug);
+    letter-spacing: var(--typography__letter_spacing--wide);
+}
+
+.label__medium {
+    font-family: var(--typography__font_family--sans);
+    font-size: var(--typography__font_size--sm);
+    font-weight: var(--typography__font_weight--semibold);
+    line-height: var(--typography__line_height--snug);
+    letter-spacing: var(--typography__letter_spacing--normal);
+}
+
+.label__large {
+    font-family: var(--typography__font_family--sans);
+    font-size: var(--typography__font_size--md);
+    font-weight: var(--typography__font_weight--semibold);
+    line-height: var(--typography__line_height--snug);
+    letter-spacing: var(--typography__letter_spacing--normal);
+}
+
+.caption {
+    font-family: var(--typography__font_family--sans);
+    font-size: var(--typography__font_size--xs);
+    font-weight: var(--typography__font_weight--regular);
+    line-height: var(--typography__line_height--normal);
+    letter-spacing: var(--typography__letter_spacing--normal);
+}
+
+.caption--strong {
+    font-family: var(--typography__font_family--sans);
+    font-size: var(--typography__font_size--xs);
+    font-weight: var(--typography__font_weight--semibold);
+    line-height: var(--typography__line_height--normal);
+    letter-spacing: var(--typography__letter_spacing--normal);
+}
+
+.display__medium {
+    font-family: var(--typography__font_family--sans);
+    font-size: var(--typography__font_size--5xl);
+    font-weight: var(--typography__font_weight--extrabold);
+    line-height: var(--typography__line_height--tight);
+    letter-spacing: var(--typography__letter_spacing--tighter);
+}
+
+.display__large {
+    font-family: var(--typography__font_family--sans);
+    font-size: var(--typography__font_size--6xl);
+    font-weight: var(--typography__font_weight--extrabold);
+    line-height: var(--typography__line_height--tight);
+    letter-spacing: var(--typography__letter_spacing--tighter);
+}

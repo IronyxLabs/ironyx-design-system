@@ -1,0 +1,77 @@
+@import "../primitives/colors.scss";
+
+:root {
+    --action__primary: var(--color__primary--500);
+    --action__primary--hover: var(--color__primary--600);
+    --action__primary--active: var(--color__primary--700);
+    --action__primary--disabled: var(--color__neutral--700);
+    --action__primary--foreground: var(--color__neutral--950);
+    
+    --action__secondary: var(--color__neutral--800);
+    --action__secondary--hover: var(--color__neutral--700);
+    --action__secondary--active: var(--color__neutral--600);
+    --action__secondary--disabled: var(--color__neutral--900);
+    --action__secondary--foreground: var(--color__neutral--200);
+    
+    --action__accent: var(--color__accent--500);
+    --action__accent--hover: var(--color__accent--600);
+    --action__accent--active: var(--color__accent--700);
+    --action__accent--disabled: var(--color__neutral--700);
+    --action__accent--foreground: var(--color__neutral--950);
+    --action__secondary--foreground: var(--color__neutral--200);
+    
+    --action__destructive: var(--color__danger--600);
+    --action__destructive--hover: var(--color__danger--700);
+    --action__destructive--active: var(--color__danger--800);
+    --action__destructive--disabled: var(--color__neutral--700);
+    --action__destructive--foreground: var(--color__neutral--50);
+
+    --background: var(--color__neutral--950);
+    --background--disabled: var(--color__neutral--800);
+    --background--inverse: var(--color__neutral--50);
+    --background--muted: var(--color__neutral--800);
+    --background--subtle: var(--color__neutral--900);
+    --background--overlay: var(--color__neutral--950);
+
+    --background__surface: var(--color__neutral--900);
+    --background__surface--hover: var(--color__neutral--800);
+    --background__surface--active: var(--color__neutral--700);
+
+    --border: var(--color__neutral--700);
+    --border--hover: var(--color__neutral--500);
+    --border--focus: var(--color__neutral--500);
+    --border--strong: var(--color__neutral--600);
+    --border--subtle: var(--color__neutral--800);
+    --border--disable: var(--color__neutral--800);
+
+    --focus: var(--color__primary--500);
+    --focus--error: var(--color__danger--500);
+    
+    --foreground: var(--color__neutral--100);
+    --foreground--inverse: var(--color__neutral--950);
+    --foreground--secondary: var(--color__neutral--300);
+    --foreground--link: var(--color__primary--400);
+    --foreground--muted: var(--color__neutral--500);
+    --foreground--tertiary: var(--color__neutral--500);
+    --foreground--disabled: var(--color__neutral--500);
+
+    --status__background--success: var(--color__success--950);
+    --status__border--success: var(--color__success--700);
+    --status__foreground--success: var(--color__success--400);
+    --status__icon--success: var(--color__success--400);
+    
+    --status__background--warning: var(--color__warning--950);
+    --status__border--warning: var(--color__warning--700);
+    --status__foreground--warning: var(--color__warning--400);
+    --status__icon--warning: var(--color__warning--400);
+    
+    --status__background--error: var(--color__danger--950);
+    --status__border--error: var(--color__danger--700);
+    --status__foreground--error: var(--color__danger--400);
+    --status__icon--error: var(--color__danger--400);
+    
+    --status__background--info: var(--color__info--950);
+    --status__border--info: var(--color__info--700);
+    --status__foreground--info: var(--color__info--400);
+    --status__icon--info: var(--color__info--400);
+}

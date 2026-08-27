@@ -1,0 +1,48 @@
+@import "semantics/colors.scss";
+@import "primitives/spacing.scss";
+@import "primitives/border.scss";
+
+:root {
+    --button__padding_x: var(--spacing--4);
+    --button__radius: var(--border__radius--md);
+    --button__height: 40px;
+    --button__gap: var(--spacing--2);
+}
+
+button.button {    
+        padding-left: var(--button__padding_x);
+        padding-right: var(--button__padding_x);
+    
+        border-radius: var(--button__radius);
+    
+        height: var(--button__height);
+}
+
+div.button__content {
+    display: flex;
+    gap: var(--button__gap);
+
+    justify-content: center;
+
+    width: 100%;
+}
+
+button.button--primary {    
+    background-color: var(--action__primary);
+    
+    color: var(--action__primary--foreground);
+    
+    &:hover {
+        background-color: var(--action__primary--hover);
+    }
+}
+
+button.button--secondary {    
+    background-color: var(--action__secondary);
+    
+    color: var(--action__secondary--foreground);
+    
+    &:hover {
+        background-color: var(--action__secondary--hover);
+    }
+}
