@@ -3,9 +3,9 @@
 </script>
 
 <button class="button button--{variant}" disabled={disabled}>
-    <div class="button__content">
+    <div class="component__content">
         {#if icon !== ''}
-            <i class="button__icon button__icon--{variant} {icon}"></i>
+            <i class="{icon}"></i>
         {/if}
         {@render children()}
     </div>

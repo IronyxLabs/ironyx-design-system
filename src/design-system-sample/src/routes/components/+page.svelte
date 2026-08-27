@@ -1,5 +1,6 @@
 <script>
 	import IxButton from "$lib/components/ix-button.svelte";
+	import IxInput from "$lib/components/ix-input.svelte";
 
 </script>
 <svelte:head>
@@ -89,6 +90,15 @@
                 <IxButton variant="secondary" icon="ri-file-close-line" disabled={true}>Secondary</IxButton>
                 <IxButton variant="destructive" icon="ri-delete-bin-line">Destructive</IxButton>
                 <IxButton variant="destructive" icon="ri-delete-bin-line" disabled={true}>Destructive</IxButton>
+            </div>
+        </div>  
+        
+        <div class="stack">
+            <span class="caption">Input</span>
+    
+            <div class="bar">
+                <IxInput icon="ri-user-line" placeholder="Write Something"></IxInput>
+                <IxInput icon="ri-user-line" placeholder="Disabled" disabled={true}></IxInput>
             </div>
         </div>  
     </div>
