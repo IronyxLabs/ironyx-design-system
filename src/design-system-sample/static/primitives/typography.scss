@@ -1,0 +1,32 @@
+:root {
+    --typography__font_family--sans: "Manrope", sans-serif;
+
+    --typography__font_size--xs: 12px;
+    --typography__font_size--sm: 14px;
+    --typography__font_size--md: 16px;
+    --typography__font_size--lg: 18px;
+    --typography__font_size--xl: 20px;
+    --typography__font_size--2xl: 24px;
+    --typography__font_size--3xl: 30px;
+    --typography__font_size--4xl: 36px;
+    --typography__font_size--5xl: 48px;
+    --typography__font_size--6xl: 60px;
+
+    --typography__font_weight--regular: 400;
+    --typography__font_weight--medium: 500;
+    --typography__font_weight--semibold: 600;
+    --typography__font_weight--bold: 700;
+    --typography__font_weight--extrabold: 800;
+
+    --typography__letter-spacing--tight: -0.16px;
+    --typography__letter-spacing--tighter: -0.32px;
+    --typography__letter-spacing--normal: 0px;
+    --typography__letter-spacing--wide: 0.32px;
+    --typography__letter-spacing--wider: 0.64px;
+
+    --typography__line-height--none: 1;
+    --typography__line-height--tight: 1.25;
+    --typography__line-height--snug: 1.375;
+    --typography__line-height--normal: 1.5;
+    --typography__line-height--relaxed: 1.625;
+}
