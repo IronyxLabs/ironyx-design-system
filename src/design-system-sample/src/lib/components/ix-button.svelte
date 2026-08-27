@@ -3,7 +3,7 @@
 </script>
 
 <button class="button button--{variant}" disabled={disabled}>
-    <div class="component__content">
+    <div class="component__container button__container">
         {#if icon !== ''}
             <i class="{icon}"></i>
         {/if}

@@ -1,4 +1,5 @@
 <script>
+	import IxBadge from "$lib/components/ix-badge.svelte";
 	import IxButton from "$lib/components/ix-button.svelte";
 	import IxInput from "$lib/components/ix-input.svelte";
 
@@ -99,6 +100,20 @@
             <div class="bar">
                 <IxInput icon="ri-user-line" placeholder="Write Something"></IxInput>
                 <IxInput icon="ri-user-line" placeholder="Disabled" disabled={true}></IxInput>
+            </div>
+        </div>   
+        
+        <div class="stack">
+            <span class="caption">Badge</span>
+    
+            <div class="bar" style="width: fit-content;">
+                <IxBadge icon="ri-battery-low-line" label="10%" variant="neutral"></IxBadge>
+                <IxBadge icon="ri-battery-low-line" label="10%" variant="primary"></IxBadge>
+                <IxBadge icon="ri-battery-low-line" label="10%" variant="accent"></IxBadge>
+                <IxBadge icon="ri-battery-low-line" label="10%" variant="success"></IxBadge>
+                <IxBadge icon="ri-battery-low-line" label="10%" variant="warning"></IxBadge>
+                <IxBadge icon="ri-battery-low-line" label="10%" variant="error"></IxBadge>
+                <IxBadge icon="ri-battery-low-line" label="10%" variant="info"></IxBadge>
             </div>
         </div>  
     </div>
