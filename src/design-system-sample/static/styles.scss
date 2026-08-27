@@ -18,11 +18,16 @@ button.button {
         height: var(--button__height);
 }
 
+i.button__icon {
+    font-size: 24px;
+}
+
 div.button__content {
     display: flex;
     gap: var(--button__gap);
 
     justify-content: center;
+    align-items: center;
 
     width: 100%;
 }
@@ -32,8 +37,12 @@ button.button--primary {
     
     color: var(--action__primary--foreground);
     
-    &:hover {
+    &:hover:not(:disabled) {
         background-color: var(--action__primary--hover);
+    }
+
+    &:disabled {
+        opacity: 0.5;
     }
 }
 
@@ -42,7 +51,25 @@ button.button--secondary {
     
     color: var(--action__secondary--foreground);
     
-    &:hover {
+    &:hover:not(:disabled) {
         background-color: var(--action__secondary--hover);
+    }
+
+    &:disabled {
+        opacity: 0.5;
+    }
+}
+
+button.button--destructive {    
+    background-color: var(--action__destructive);
+    
+    color: var(--action__destructive--foreground);
+    
+    &:hover:not(:disabled) {
+        background-color: var(--action__destructive--hover);
+    }
+
+    &:disabled {
+        opacity: 0.5;
     }
 }

@@ -49,6 +49,7 @@
     div.bar {
         display: grid;
         grid-auto-flow: row;
+        gap: 4px;
         
         width: 100%;
         height: fit-content;
@@ -82,8 +83,12 @@
             <span class="caption">Button</span>
     
             <div class="bar">
-                <IxButton variant="primary">Primary</IxButton>
-                <IxButton variant="secondary">Secondary</IxButton>
+                <IxButton variant="primary" icon="ri-save-2-fill">Primary</IxButton>
+                <IxButton variant="primary" icon="ri-save-2-fill" disabled={true}>Primary</IxButton>
+                <IxButton variant="secondary" icon="ri-file-close-line">Secondary</IxButton>
+                <IxButton variant="secondary" icon="ri-file-close-line" disabled={true}>Secondary</IxButton>
+                <IxButton variant="destructive" icon="ri-delete-bin-line">Destructive</IxButton>
+                <IxButton variant="destructive" icon="ri-delete-bin-line" disabled={true}>Destructive</IxButton>
             </div>
         </div>  
     </div>

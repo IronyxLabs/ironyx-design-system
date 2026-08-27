@@ -66,6 +66,7 @@
 	
 	<link rel="stylesheet" href="/css/reset.css" />
 	<link rel="stylesheet" href="/css/styles.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" />
 </svelte:head>
 
 <div class="main">  
