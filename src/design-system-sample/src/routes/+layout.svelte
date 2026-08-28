@@ -34,7 +34,7 @@
 
     nav.menu {
         display: grid;
-        grid-template-columns: auto auto auto 1fr;
+        grid-template-columns: auto auto auto auto 1fr;
         gap: .8rem;
     }
 
@@ -67,6 +67,7 @@
 	<link rel="stylesheet" href="/css/reset.css" />
 	<link rel="stylesheet" href="/css/styles.css" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" />
+	<link rel="stylesheet" href="styles.scss"/>
 </svelte:head>
 
 <div class="main">  
@@ -76,6 +77,7 @@
           <a class="menu_item" selected={$page.url.pathname === '/primitive'} href="/primitive">Primitive</a>
           <a class="menu_item" selected={$page.url.pathname === '/semantic'} href="/semantic">Semantic</a>
           <a class="menu_item" selected={$page.url.pathname === '/components'} href="/components">Components</a>
+          <a class="menu_item" selected={$page.url.pathname === '/sample'} href="/sample">Sample</a>
       </nav>
   </div>  
 
