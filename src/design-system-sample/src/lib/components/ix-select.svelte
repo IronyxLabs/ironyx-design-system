@@ -1,8 +1,16 @@
 <script lang="ts">
+	import type { Field } from '$lib/form/field.svelte';
 	import type { OptionModel } from '$lib/models/option-model';
 	import type { Snippet } from 'svelte';
 
-    let { icon = '', options = [], optionTemplate = defaultOptionTemplate }: { icon?: string, options: OptionModel[], optionTemplate?: Snippet<[OptionModel]> } = $props();
+    let { icon = '', field = $bindable<Field<any>>(), options = [], optionTemplate = defaultOptionTemplate }: 
+      { icon?: string, field: Field<any>, options: OptionModel[], optionTemplate?: Snippet<[OptionModel]> } = $props();
+
+    function validate() {
+      field.validators.forEach(validator => {
+         field.validationState = validator.validate(field.value);
+      })
+    }
 </script>
 
 {#snippet defaultOptionTemplate(option: OptionModel)}
@@ -14,7 +22,7 @@
     {#if icon !== ''}
         <i class="{icon}"></i>
     {/if}
-    <select>
+    <select bind:value={field.value} oninput={validate}>
         {#each options as option (option)}
             {@render optionTemplate(option)}
         {/each}

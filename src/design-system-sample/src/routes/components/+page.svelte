@@ -16,7 +16,6 @@
 	
 </script>
 <svelte:head>
-    <link rel="stylesheet" href="styles.scss"/>
 </svelte:head>
 
 <style lang="scss">
