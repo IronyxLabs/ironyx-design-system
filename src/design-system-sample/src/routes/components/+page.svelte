@@ -1,8 +1,18 @@
-<script>
+<script lang="ts">
 	import IxBadge from "$lib/components/ix-badge.svelte";
 	import IxButton from "$lib/components/ix-button.svelte";
 	import IxInput from "$lib/components/ix-input.svelte";
+	import IxSelect from "$lib/components/ix-select.svelte";
+	import type { OptionModel } from "$lib/models/option-model";
 
+	const cities: OptionModel[] = [
+	        { id: 1, label: "Rome" }, 
+			{ id: 2, label: "New York", disabled: true }, 
+			{ id: 3, label: "Budapest" },
+			{ id: 4, label: "London"},
+			{ id: 5, label: "Paris"}
+	]
+	
 </script>
 <svelte:head>
     <link rel="stylesheet" href="styles.scss"/>
@@ -114,6 +124,15 @@
                 <IxBadge icon="ri-battery-low-line" label="10%" variant="warning"></IxBadge>
                 <IxBadge icon="ri-battery-low-line" label="10%" variant="error"></IxBadge>
                 <IxBadge icon="ri-battery-low-line" label="10%" variant="info"></IxBadge>
+            </div>
+        </div>   
+        
+        <div class="stack">
+            <span class="caption">Select</span>
+    
+            <div class="bar">
+                <IxSelect icon="ri-building-line" options={cities} id='id' label='label'>
+                </IxSelect>
             </div>
         </div>  
     </div>

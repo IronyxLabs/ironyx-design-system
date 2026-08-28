@@ -4,7 +4,7 @@
     let invalid = false;
 </script>
 
-<div class="component__container input__container input" invalid={invalid} disabled={disabled}>
+<div class="component__container input__container input body__medium" invalid={invalid} disabled={disabled}>
     {#if icon !== ''}
         <i class="{icon}"></i>
     {/if}

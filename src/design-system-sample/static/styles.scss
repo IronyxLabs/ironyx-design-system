@@ -1,4 +1,5 @@
 @import "semantics/colors.scss";
+@import "semantics/typography.scss";
 @import "primitives/spacing.scss";
 @import "primitives/border.scss";
 @import "primitives/typography.scss";
@@ -46,13 +47,37 @@
     --badge__foreground--error: var(--color__danger--700);
     --badge__background--info: var(--color__info--100);
     --badge__foreground--info: var(--color__info--700);
+
+    --checkbox__size: 20px;
+    --checkbox__radius: var(--border__radius--md);
+    --checkbox__background--unchecked: transparent;
+    --checkbox__border: var(--border__width--thin) solid var(--border);
+
+    --select__height: 40px;
+    --select__background: var(--background__surface);
+    --select__padding_x: var(--spacing--4);
+    --select__border: var(--border__width--thin) solid var(--border);
+    --select__radius: var(--border__radius--md);
+    --select__gap: var(--spacing--2);
+    --select__foreground: var(--foreground);
+
+    --option__background: transparent;
+    --option__background--hover: var(--background--muted);
+    --option__background--selected: var(--action__primary);
+    --option__background--disabled: transparent;
+    --option__padding_x: var(--spacing--4);
+    --option__height: 40px;
+    --option__foreground: var(--foreground);
+    --option__foreground--hover: var(--foreground);
+    --option__foreground--selected: var(--action__primary--foreground);
+    --option__foreground--disabled: var(--foreground--disabled);
 }
 
 i {
     font-size: 24px;
 }
 
-input {
+input:not([type=checkbox]) {
     width: 100%;
     height: 100%;
 
@@ -63,6 +88,53 @@ input {
 
     &:focus-visible {
         outline-style: none;
+    }
+}
+
+input[type=checkbox] {
+    appearance: none;    
+
+    display: grid;
+
+    place-content: center;
+
+    cursor: pointer;
+}
+
+select {
+    appearance: none;
+    
+    width: 100%;
+
+    background-color: transparent;
+    border-color: transparent;
+
+    color: inherit;
+
+    &:focus-visible {
+        outline-style: none;
+    }
+
+    @supports (appearance: base-select) {
+        &,
+        &::picker(select) {
+            appearance: base-select;
+
+            align-content: center;
+        }   
+   
+        &::picker(select) {
+            background-color: var(--select__background);
+    
+            border: var(--select__border);
+            border-radius: var(--select__radius);
+        }
+    }
+}
+
+option {
+    &::checkmark {
+        display: none;
     }
 }
 
@@ -222,4 +294,52 @@ div.input__container {
 .badge--info {
     background-color: var(--badge__background--info);
     color: var(--badge__foreground--info);
+}
+
+.select {    
+    height: var(--select__height);
+    
+    background-color: var(--select__background);
+    
+    border: var(--select__border);
+    border-radius: var(--select__radius);
+
+    padding-left: var(--select__padding_x);
+    padding-right: var(--select__padding_x);
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--select__gap);
+
+    color: var(--select__foreground);
+
+    & option {        
+        background-color: var(--option__background);
+        
+        color: var(--option__foreground);
+
+        padding-right: var(--option__padding_x);
+        padding-left: var(--option__padding_x);
+
+        height: var(--option__height);
+    } 
+    
+    & option:enabled:hover {
+        background-color: var(--option__background--hover);
+        color: var(--option__foreground--hover);
+    }   
+
+    & option:checked {
+        background-color: var(--option__background--selected);
+        color: var(--option__foreground--selected)
+    }
+
+    & option:disabled {
+        background-color: var(--option__background--disabled);
+        color: var(--option__foreground--disabled);
+    }
+
+    &::picker(select) {
+        background-color: var(--select__background);
+    }
 }
