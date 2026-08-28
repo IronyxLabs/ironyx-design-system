@@ -71,6 +71,15 @@
     --option__foreground--hover: var(--foreground);
     --option__foreground--selected: var(--action__primary--foreground);
     --option__foreground--disabled: var(--foreground--disabled);
+
+    --card__padding: var(--spacing--4);
+    --card__background: var(--background__surface);
+    --card__background--hover: var(--background__surface--subtle);
+    --card__background--hover: var(--background__surface);
+    --card__border: var(--border__width--thin) solid var(--border);
+    --card__border--hover: var(--border__width--thin) solid var(--border--hover);
+    --card__border--focus: var(--border__width--medium) solid var(--focus);
+    --card__radius: var(--border__radius--md);
 }
 
 i {
@@ -341,5 +350,27 @@ div.input__container {
 
     &::picker(select) {
         background-color: var(--select__background);
+    }
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+
+    padding: var(--card__padding);
+
+    background-color: var(--card__background);
+
+    border: var(--card__border);
+    border-radius: var(--card__radius);
+
+    &:hover {
+        background-color: var(--card__background--hover);
+        border: var(--card__border--hover);
+    }
+    
+    &:focus-within {
+        background-color: var(--card__background--focus);
+        outline: var(--card__border--focus);
     }
 }

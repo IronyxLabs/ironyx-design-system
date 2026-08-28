@@ -2,7 +2,7 @@
 	import type { OptionModel } from '$lib/models/option-model';
 	import type { Snippet } from 'svelte';
 
-    let { icon = '', options = [], optionTemplate = defaultOptionTemplate }: { icon: string, options: OptionModel[], optionTemplate: Snippet<[OptionModel]> } = $props();
+    let { icon = '', options = [], optionTemplate = defaultOptionTemplate }: { icon?: string, options: OptionModel[], optionTemplate?: Snippet<[OptionModel]> } = $props();
 </script>
 
 {#snippet defaultOptionTemplate(option: OptionModel)}

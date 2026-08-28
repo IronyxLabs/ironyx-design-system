@@ -1,6 +1,7 @@
 <script lang="ts">
 	import IxBadge from "$lib/components/ix-badge.svelte";
 	import IxButton from "$lib/components/ix-button.svelte";
+	import IxCard from "$lib/components/ix-card.svelte";
 	import IxInput from "$lib/components/ix-input.svelte";
 	import IxSelect from "$lib/components/ix-select.svelte";
 	import type { OptionModel } from "$lib/models/option-model";
@@ -131,8 +132,20 @@
             <span class="caption">Select</span>
     
             <div class="bar">
-                <IxSelect icon="ri-building-line" options={cities} id='id' label='label'>
-                </IxSelect>
+                <IxSelect icon="ri-building-line" options={cities}></IxSelect>
+            </div>
+        </div>   
+        
+        <div class="stack">
+            <span class="caption">Card</span>
+    
+            <div style="width: 300px">
+                <IxCard>
+                    <div style="display: grid; grid-template-rows: auto auto 1fr; gap: 8px; width: 100%; height: 100%;">
+                        <IxInput icon="ri-user-line" placeholder="Name"></IxInput>
+                        <IxSelect icon="ri-building-line" options={cities}></IxSelect>                        
+                    </div>
+                </IxCard>
             </div>
         </div>  
     </div>
