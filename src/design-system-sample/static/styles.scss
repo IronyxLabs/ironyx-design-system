@@ -80,6 +80,9 @@
     --card__border--hover: var(--border__width--thin) solid var(--border--hover);
     --card__border--focus: var(--border__width--medium) solid var(--focus);
     --card__radius: var(--border__radius--md);
+
+    --caption__foreground--disabled: var(--foreground--disabled);
+    --label__foreground--disabled: var(--foreground--disabled);
 }
 
 i {
@@ -383,4 +386,12 @@ div.input__container {
 
 .text__error {
     color: var(--status__foreground--error);
+}
+
+.caption--disabled {
+    color: var(--caption__foreground--disabled);
+}
+
+.label--disabled {
+    color: var(--label__foreground--disabled);
 }

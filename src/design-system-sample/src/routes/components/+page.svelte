@@ -2,7 +2,7 @@
 	import IxBadge from "$lib/components/ix-badge.svelte";
 	import IxButton from "$lib/components/ix-button.svelte";
 	import IxCard from "$lib/components/ix-card.svelte";
-	import IxInput from "$lib/components/ix-input.svelte";
+	import IxInput from "@ironyx/design-system";
 	import IxSelect from "$lib/components/ix-select.svelte";
 	import type { OptionModel } from "$lib/models/option-model";
 

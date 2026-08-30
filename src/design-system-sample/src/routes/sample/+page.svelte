@@ -1,7 +1,6 @@
 <script lang="ts">
-    import { Field, Form, IxField, RequiredValidator } from '@ironyx/design-system';
+    import { Field, Form, IxField, IxInput, RequiredValidator } from '@ironyx/design-system';
 	import IxCard from '$lib/components/ix-card.svelte';
-	import IxInput from '$lib/components/ix-input.svelte';
 	import IxSelect from '$lib/components/ix-select.svelte';
 	import { gender } from '$lib/models/gender-enum';
 
@@ -33,7 +32,7 @@
 
 			<div class="form">
 			    <IxField label="Name" bind:field={form.fields.name} required={true} hint="Full name of the person">
-					<IxInput bind:field={form.fields.name}></IxInput>							
+					<IxInput></IxInput>							
 				</IxField>
 				<IxSelect options={genders} bind:field={form.fields.gender}></IxSelect>
 				<IxSelect options={cities} bind:field={form.fields.birthplace}></IxSelect>

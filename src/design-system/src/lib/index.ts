@@ -1,4 +1,5 @@
 export { default as IxField } from "./components/field/ix-field.svelte";
+export { default as IxInput } from "./components/input/ix_input.svelte"
 
 export type { IValidator } from "./forms/validators/validator.ts"
 export { RequiredValidator } from './forms/validators/required_validator/required_validator.ts'
