@@ -1,8 +1,8 @@
 import { Field } from "./field.svelte.ts";
 import { faker } from "@faker-js/faker";
-import type { IValidator } from "../validator/validator.ts";
+import type { IValidator } from "../validators/validator.ts";
 import { expect, vi, describe, it } from 'vitest';
-import { ValidationState } from "../validation_state/validation-state.ts";
+import { ValidationStateHelper } from "../validation_state/validation_state.ts";
 
 describe('Field', () => {
   const createSut = (validators: IValidator[]) => new Field<string>({ validators: validators });
@@ -10,7 +10,7 @@ describe('Field', () => {
   it('[UNIT][FLD-001]: Validate', () => {
     // Act
     const validator = {
-      validate: vi.fn().mockReturnValue(ValidationState.valid())
+      validate: vi.fn().mockReturnValue(ValidationStateHelper.valid())
     };
     const sut = createSut([validator, validator]);
     const value = faker.string.alphanumeric();
@@ -30,7 +30,7 @@ describe('Field', () => {
     // Act
     const error = faker.lorem.sentence();
     const validator = {
-      validate: vi.fn().mockReturnValue(ValidationState.invalid(error))
+      validate: vi.fn().mockReturnValue(ValidationStateHelper.invalid(error))
     };
     const sut = createSut([validator]);
     

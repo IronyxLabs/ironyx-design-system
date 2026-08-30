@@ -17,12 +17,68 @@ describe('IxField', () => {
       field: field,
       children: createRawSnippet(() => {
         return {
-          render: () => "<span></span>"        
+          render: () => "<span></span>"
         }
       })
     });
     
     // Assert
     expect(screen.getByText(label)).toBeInTheDocument();
+  })
+
+  it('[UNIT][IFD-002]: Required field', () => {
+    // Act
+    render(IxField, {
+      label: faker.string.alphanumeric(),
+      field: FieldFaker.random(),
+      required: true,
+      children: createRawSnippet(() => {
+        return {
+          render: () => "<span></span>"
+        }
+      })
+    });
+    
+    // Assert
+    expect(screen.getByTestId('label')).toHaveClass('label--required')
+  })
+  
+  it('[UNIT][IFD-003]: Show hint', () => {
+    // Arrange
+    const hint = faker.lorem.slug();
+    
+    // Act
+    render(IxField, {
+      label: faker.string.alphanumeric(),
+      field: FieldFaker.valid(),
+      hint: hint,
+      children: createRawSnippet(() => {
+        return {
+          render: () => "<span></span>"
+        }
+      })
+    });
+    
+    // Assert
+    expect(screen.getByText(hint)).toBeInTheDocument();
+  })
+  
+  it('[UNIT][IFD-004]: Show error', () => {
+    // Arrange
+    const error = faker.lorem.slug();
+    
+    // Act
+    render(IxField, {
+      label: faker.string.alphanumeric(),
+      field: FieldFaker.invalid(error),
+      children: createRawSnippet(() => {
+        return {
+          render: () => "<span></span>"
+        }
+      })
+    });
+    
+    // Assert
+    expect(screen.getByText(error)).toBeInTheDocument();
   })
 })

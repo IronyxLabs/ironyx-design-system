@@ -374,3 +374,13 @@ div.input__container {
         outline: var(--card__border--focus);
     }
 }
+
+.field {
+    display: grid;
+    grid-template-rows: auto 1fr 1rem;
+    gap: var(--spacing--1);
+}
+
+.text__error {
+    color: var(--status__foreground--error);
+}

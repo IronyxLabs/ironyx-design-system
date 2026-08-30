@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Field } from "$lib/form/field.svelte";
+	import type { Field } from "@ironyx/design-system";
 
     let { placeholder = '' ,icon ='', field: field = $bindable<Field<string>>(), disabled = false }: {
       placeholder?: string, icon?: string, field: Field<string>, disabled?: boolean

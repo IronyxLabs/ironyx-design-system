@@ -3,12 +3,7 @@ export interface ValidationState {
   error?: string;
 }
 
-export interface ValidationState {
-	isValid: boolean;
-	error?: string;
-}
-
-export const ValidationState = {
+export const ValidationStateHelper = {
   valid(): ValidationState {
     return { isValid: true };
   },

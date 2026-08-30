@@ -1,15 +1,13 @@
 <script lang="ts">
+    import { Field, Form, IxField, RequiredValidator } from '@ironyx/design-system';
 	import IxCard from '$lib/components/ix-card.svelte';
 	import IxInput from '$lib/components/ix-input.svelte';
 	import IxSelect from '$lib/components/ix-select.svelte';
-	import { Field } from '$lib/form/field.svelte';
-	import { Form } from '$lib/form/form';
 	import { gender } from '$lib/models/gender-enum';
-	import { EmptyValidator } from '$lib/validators/empty-validator';
 
-	const form: Form = $state(
+	const form: Form<{name: Field<string>, gender: Field<gender>, birthplace: Field<number>}> = $state(
 		new Form({
-			name: new Field<string>(new EmptyValidator("Name is mandatory")),
+			name: new Field<string>({ validators: [new RequiredValidator<string>("Name is mandatory") ] }),
 			gender: new Field<gender>(),
 			birthplace: new Field<number>()
 		})
@@ -34,7 +32,9 @@
 			<span class="heading__h4">Personal Information</span>
 
 			<div class="form">
-				<IxInput bind:field={form.fields.name}></IxInput>
+			    <IxField label="Name" bind:field={form.fields.name} required={true} hint="Full name of the person">
+					<IxInput bind:field={form.fields.name}></IxInput>							
+				</IxField>
 				<IxSelect options={genders} bind:field={form.fields.gender}></IxSelect>
 				<IxSelect options={cities} bind:field={form.fields.birthplace}></IxSelect>
 			</div>
@@ -46,7 +46,7 @@
 		Gender: {form.fields.gender.value}<br />
 		Birthplace: {form.fields.birthplace.value}
 
-		<br /><br />IsValid: {form.isValid()}
+		<br /><br />IsValid: {form.isValid}
 	</IxCard>
 </div>
 
