@@ -7,7 +7,7 @@
     let { label, field = $bindable<Field<T>>(), children, required = false, hint = undefined, disabled = false }:
       { label: string, field?: Field<T>, children: Snippet, required?: boolean, hint?: string, disabled?: boolean } = $props();
     
-    setContext(FIELD_CONTEXT, new FieldContext(field, disabled));
+    setContext(FIELD_CONTEXT, () => new FieldContext(field, disabled));
 </script>
 
 <div class="field">

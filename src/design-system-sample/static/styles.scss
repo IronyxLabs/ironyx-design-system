@@ -60,6 +60,7 @@
     --select__radius: var(--border__radius--md);
     --select__gap: var(--spacing--2);
     --select__foreground: var(--foreground);
+    --select__opacity--disabled: 0.5;
 
     --option__background: transparent;
     --option__background--hover: var(--background--muted);
@@ -125,6 +126,10 @@ select {
 
     &:focus-visible {
         outline-style: none;
+    }
+
+    &:disabled {
+        opacity: var(--select__opacity--disabled);
     }
 
     @supports (appearance: base-select) {

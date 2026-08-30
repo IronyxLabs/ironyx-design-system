@@ -1,7 +1,6 @@
 <script lang="ts">
-    import { Field, Form, IxField, IxInput, RequiredValidator } from '@ironyx/design-system';
+    import { Field, Form, IxField, IxInput, IxSelect, RequiredValidator } from '@ironyx/design-system';
 	import IxCard from '$lib/components/ix-card.svelte';
-	import IxSelect from '$lib/components/ix-select.svelte';
 	import { gender } from '$lib/models/gender-enum';
 
 	const form: Form<{name: Field<string>, gender: Field<gender>, birthplace: Field<number>}> = $state(
@@ -34,8 +33,12 @@
 			    <IxField label="Name" bind:field={form.fields.name} required={true} hint="Full name of the person">
 					<IxInput></IxInput>							
 				</IxField>
-				<IxSelect options={genders} bind:field={form.fields.gender}></IxSelect>
-				<IxSelect options={cities} bind:field={form.fields.birthplace}></IxSelect>
+				<IxField label="Gender" bind:field={form.fields.gender} hint="Gender of the person" disabled={!form.isValid}>
+				    <IxSelect options={genders}></IxSelect>				
+				</IxField>
+				<IxField label="Birthplace" bind:field={form.fields.birthplace} disabled={!form.isValid}>
+				    <IxSelect options={cities}></IxSelect>				
+				</IxField>
 			</div>
 		</div>
 	</IxCard>
@@ -67,7 +70,7 @@
 
 	div.form {
 		display: grid;
-		grid-template-rows: auto, auto, auto;
-		gap: 8px;
+		grid-template-rows: auto auto auto auto;
+		gap: 16px;
 	}
 </style>

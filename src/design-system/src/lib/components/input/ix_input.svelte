@@ -7,13 +7,14 @@
       placeholder?: string, icon?: string
     } = $props();
 
-    const context = getContext<FieldContext<string>>(FIELD_CONTEXT);
+    const contextFn = getContext<() => FieldContext<string>>(FIELD_CONTEXT);
+    const context = contextFn();
 </script>
 
-<div class="component__container input__container input body__medium" disabled={context.disabled}>
+<div class="component__container input__container input body__medium" disabled={contextFn().disabled}>
     {#if icon !== ''}
         <i class="{icon}"></i>
     {/if}
-    <input class="input__input" placeholder="{placeholder}" disabled={context.disabled} aria-invalid="{!context.field.validationState.isValid}"
+    <input class="input__input" placeholder="{placeholder}" disabled={contextFn().disabled} aria-invalid="{!contextFn().field.validationState.isValid}"
             bind:value={context.field.value} oninput={() => context.field.validate()}/> 
 </div>
