@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Field, Form, IxField, IxInput, IxSelect, RequiredValidator } from '@ironyx/design-system';
+    import { Field, Form, IxField, IxInput, IxSelect, IxButton, RequiredValidator, ButtonVariant } from '@ironyx/design-system';
 	import IxCard from '$lib/components/ix-card.svelte';
 	import { gender } from '$lib/models/gender-enum';
 
@@ -39,6 +39,8 @@
 				<IxField label="Birthplace" bind:field={form.fields.birthplace} disabled={!form.isValid}>
 				    <IxSelect options={cities}></IxSelect>				
 				</IxField>
+
+				<IxButton variant={ButtonVariant.Primary} disabled={!form.isValid} onclick={() => console.log("Save OnClick")}>Save</IxButton>
 			</div>
 		</div>
 	</IxCard>

@@ -1,6 +1,7 @@
 export { default as IxField } from "./components/field/ix-field.svelte";
 export { default as IxInput } from "./components/input/ix_input.svelte";
 export { default as IxSelect } from "./components/select/ix_select.svelte";
+export { default as IxButton } from "./components/button/ix-button.svelte";
 
 export type { OptionModel } from "./components/select/option_model.ts";
 
