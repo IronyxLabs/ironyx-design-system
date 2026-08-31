@@ -3,13 +3,12 @@
 	import IxCard from '$lib/components/ix-card.svelte';
 	import { gender } from '$lib/models/gender-enum';
 
-	const form: Form<{name: Field<string>, gender: Field<gender>, birthplace: Field<number>}> = $state(
+	const form: Form<{name: Field<string>, gender: Field<gender>, birthplace: Field<number>}> = 
 		new Form({
 			name: new Field<string>({ validators: [new RequiredValidator<string>("Name is mandatory") ] }),
 			gender: new Field<gender>(),
 			birthplace: new Field<number>()
-		})
-	);
+		});
 
 	const cities = [
 		{ id: 1, label: 'Budapest' },
@@ -33,14 +32,14 @@
 			    <IxField label="Name" bind:field={form.fields.name} required={true} hint="Full name of the person">
 					<IxInput></IxInput>							
 				</IxField>
-				<IxField label="Gender" bind:field={form.fields.gender} hint="Gender of the person" disabled={!form.isValid}>
+				<IxField label="Gender" bind:field={form.fields.gender} hint="Gender of the person" disabled={!form.valid}>
 				    <IxSelect options={genders}></IxSelect>				
 				</IxField>
-				<IxField label="Birthplace" bind:field={form.fields.birthplace} disabled={!form.isValid}>
+				<IxField label="Birthplace" bind:field={form.fields.birthplace} disabled={!form.valid}>
 				    <IxSelect options={cities}></IxSelect>				
 				</IxField>
 
-				<IxButton variant={ButtonVariant.Primary} disabled={!form.isValid} onclick={() => console.log("Save OnClick")}>Save</IxButton>
+				<IxButton variant={ButtonVariant.Primary} disabled={!form.valid} onclick={() => console.log("Save OnClick")}>Save</IxButton>
 			</div>
 		</div>
 	</IxCard>

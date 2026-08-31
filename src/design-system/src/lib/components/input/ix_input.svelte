@@ -15,6 +15,6 @@
     {#if icon !== ''}
         <i class="{icon}"></i>
     {/if}
-    <input class="input__input" placeholder="{placeholder}" disabled={contextFn().disabled} aria-invalid="{!contextFn().field.validationState.isValid}"
+    <input class="input__input" placeholder="{placeholder}" disabled={contextFn().disabled} aria-invalid="{contextFn().field.invalid}"
             bind:value={context.field.value} oninput={() => context.field.validate()}/> 
 </div>

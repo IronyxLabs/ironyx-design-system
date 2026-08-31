@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { RequiredValidator } from "./required_validator.ts";
 import { faker } from "@faker-js/faker";
+import { ValidationStatus } from "../../../forms/validation_state/validation_status.ts";
 
 describe('RequiredValidator', () => {
   const createSut = (message?: string) => new RequiredValidator<string>(message);
@@ -13,7 +14,7 @@ describe('RequiredValidator', () => {
     const result = sut.validate(undefined);
     
     // Assert
-    expect(result.isValid).toBeFalsy();
+    expect(result.status).toEqual(ValidationStatus.Invalid);
   })
   
   it('[UNIT][RQV-002]: Valid value', () => {
@@ -24,7 +25,7 @@ describe('RequiredValidator', () => {
     const result = sut.validate(faker.string.alphanumeric());
     
     // Assert
-    expect(result.isValid).toBeTruthy();
+    expect(result.status).toEqual(ValidationStatus.Valid);
   })
   
   it('[UNIT][RQV-003]: Use message', () => {

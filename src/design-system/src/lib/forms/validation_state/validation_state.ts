@@ -1,14 +1,20 @@
+import { ValidationStatus } from "./validation_status.ts";
+
 export interface ValidationState {
-  isValid: boolean;
+  status: ValidationStatus;
   error?: string;
 }
 
 export const ValidationStateHelper = {
+  pending(): ValidationState {
+    return { status: ValidationStatus.Pending };
+  },
+  
   valid(): ValidationState {
-    return { isValid: true };
+    return { status: ValidationStatus.Valid };
   },
 
   invalid(error: string): ValidationState {
-    return { isValid: false, error: error };
+    return { status: ValidationStatus.Invalid, error: error };
   }
 };

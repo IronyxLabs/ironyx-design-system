@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { Form } from "./form.ts";
+import { Form } from "./form.svelte.ts";
 import { Field } from "../field/field.svelte.ts";
 import { FieldFaker } from "$lib/__test_utils/field.faker.ts";
 

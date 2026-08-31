@@ -15,5 +15,5 @@ export { FieldContext } from "./forms/field_context/field_context.ts"
 export type { ValidationState } from "./forms/validation_state/validation_state.ts"
 export { ValidationStateHelper } from "./forms/validation_state/validation_state.ts"
 
-export { Form } from "./forms/form/form.ts";
+export { Form } from "./forms/form/form.svelte.ts";
 export { Field } from "./forms/field/field.svelte.ts";
