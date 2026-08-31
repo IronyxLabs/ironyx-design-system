@@ -3,6 +3,8 @@ export { default as IxInput } from "./components/input/ix_input.svelte";
 export { default as IxSelect } from "./components/select/ix_select.svelte";
 export { default as IxButton } from "./components/button/ix-button.svelte";
 
+export { ButtonVariant } from './components/button/button_variants.ts';
+
 export type { OptionModel } from "./components/select/option_model.ts";
 
 export type { IValidator } from "./forms/validators/validator.ts"
