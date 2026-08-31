@@ -3,10 +3,12 @@ import { ValidationStatus } from "../validation_state/validation_status.ts";
 import type { IValidator } from "../validators/validator.ts";
 
 export class Field<T> {
+  private initialized = false;
+  
   public value = $state<T>();
 
   private validators: IValidator<T>[] = [];
-  public validationState : ValidationState;
+  public validationState = $state<ValidationState>(ValidationStateHelper.pending());
 
   public get valid(): boolean {
     return this.validationState.status === ValidationStatus.Valid;
@@ -18,17 +20,32 @@ export class Field<T> {
   constructor(params: { validators?: IValidator<T>[] } = { validators: [] }) {
     this.validators = params.validators ?? [];
 
-    this.validationState = $state<ValidationState>(this.validators.length === 0 ? ValidationStateHelper.valid() : ValidationStateHelper.pending());
+    $effect(() => this.validate());
   }
 
-  public validate(): void {
-    if (this.validators.length === 0) return;
-    
-    let i = 0;    
-    this.validationState = ValidationStateHelper.pending();
-    while (!this.invalid && i < this.validators.length) {
-      this.validationState = this.validators[i].validate(this.value);
-      i++;
+  public validate() {       
+    const value = this.value;
+
+    if (this.validators.length === 0) {
+      this.initialized = true;
+      this.validationState = ValidationStateHelper.valid();
+      return;
     }
+    
+    if (!this.initialized)
+    {
+      this.initialized = true;
+      return;
+    }
+    
+    for (const validator of this.validators) {
+      const result = validator.validate(value);
+      if (result.status === ValidationStatus.Invalid) {
+        this.validationState = result;
+        return;
+      }
+    }    
+
+    this.validationState = ValidationStateHelper.valid();
   }
 }

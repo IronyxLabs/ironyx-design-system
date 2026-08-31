@@ -20,7 +20,7 @@
     {#if icon !== ''}
         <i class="{icon}"></i>
     {/if}
-    <select bind:value={context.field.value} oninput={() => contextFn().field.validate()} 
+    <select bind:value={context.field.value} 
         disabled={contextFn().disabled} aria-invalid={contextFn().field.invalid}>
         {#each options as option (option)}
             {@render optionTemplate(option)}
