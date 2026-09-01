@@ -4,7 +4,7 @@ import type { IValidator } from "../validator.ts";
 export class RequiredValidator<T> implements IValidator<T> {
   constructor(private readonly message: string = 'Field is required'){}
   
-  validate(value: T | undefined): ValidationState {
+  validate(value: T | undefined | null): ValidationState {
     if (value === undefined || value === null || value === '') return ValidationStateHelper.invalid(this.message);
 
     return ValidationStateHelper.valid();
