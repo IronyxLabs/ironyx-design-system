@@ -10,8 +10,10 @@ export class FieldFaker {
       
       validators: [],
       validationState: { isValid: faker.datatype.boolean(), error: faker.lorem.sentence() },
-      validate: vi.fn()
-      
+      validate: vi.fn(),
+
+      valid: faker.datatype.boolean(),
+      invalid: faker.datatype.boolean()
     }
   }
   
@@ -22,6 +24,8 @@ export class FieldFaker {
   public static valid(): Field<string> {
     const result = FieldFaker.generate();
     result.validationState = ValidationStateHelper.valid();
+    result.valid = true;
+    result.invalid = false;
       
     return result as Field<string>;
   }
@@ -29,6 +33,8 @@ export class FieldFaker {
   public static invalid(error: string): Field<string> {
     const result = FieldFaker.generate();
     result.validationState = ValidationStateHelper.invalid(error);
+    result.valid = false;
+    result.invalid = true;
       
     return result as Field<string>;
   }

@@ -14,9 +14,9 @@
     <span data-testid='label' class="label__small" 
         class:label--required={required} class:label--disabled={disabled}>{label}</span>
     {@render children()}
-    {#if field.isValid}
-    <span class="caption" class:caption--disabled={disabled}>{hint}</span>
-    {:else}
+    {#if field.invalid}
     <span class="caption text__error">{field.validationState.error}</span>
+    {:else}
+    <span class="caption" class:caption--disabled={disabled}>{hint}</span>
     {/if}
 </div>

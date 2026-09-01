@@ -1,9 +1,19 @@
 <script lang="ts">
-	import { FIELD_CONTEXT } from "$lib/forms/constants.ts";
-	import { FieldContext } from "$lib/forms/form_context/field_context.ts";
-	import { getContext } from "svelte";
+	import { IxField, IxInput, type IValidator } from "../index.ts";
+	import { Field } from "../forms/field/field.svelte.ts";
 
-    const context = getContext<FieldContext<string>>(FIELD_CONTEXT);
+	let { validator } : { validator: IValidator<string> } = $props();
+
+	const field = new Field<string>({ validators: [validator] });
 </script>
 
-<span data-testid="value">{context.value}</span>
+<IxField field={field} label="Name">
+    <IxInput></IxInput>
+    {#if field.valid}
+    <span>Valid</span>
+    {/if}
+
+    {#if field.invalid}
+    <span>Invalid</span>
+    {/if}
+</IxField>
