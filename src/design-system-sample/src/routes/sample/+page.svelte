@@ -1,6 +1,5 @@
 <script lang="ts">
-    import { Field, Form, IxField, IxInput, IxSelect, IxButton, RequiredValidator, ButtonVariant, AbstractValidator, ValidationStateHelper } from '@ironyx/design-system';
-	import IxCard from '$lib/components/ix-card.svelte';
+    import { Field, Form, IxField, IxInput, IxSelect, IxButton, RequiredValidator, ButtonVariant, AbstractValidator, ValidationStateHelper, IxCard } from '@ironyx/design-system';
 	import { gender } from '$lib/models/gender-enum';
 
 	const form: Form<{name: Field<string>, gender: Field<gender>, birthplace: Field<number>}> = 

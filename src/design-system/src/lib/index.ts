@@ -5,6 +5,7 @@ export { default as IxField } from './components/field/ix-field.svelte';
 export { default as IxInput } from './components/input/ix_input.svelte';
 export { default as IxSelect } from './components/select/ix_select.svelte';
 
+export { BadgeVariant } from './components/badge/badge__variant.ts';
 export { ButtonVariant } from './components/button/button_variants.ts';
 
 export type { OptionModel } from './components/select/option_model.ts';

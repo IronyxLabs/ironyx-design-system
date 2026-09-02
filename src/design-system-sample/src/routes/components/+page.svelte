@@ -1,7 +1,5 @@
 <script lang="ts">
-	import IxBadge from "$lib/components/ix-badge.svelte";
-	import IxCard from "$lib/components/ix-card.svelte";
-	import { IxButton, IxInput, IxSelect, OptionModel } from '@ironyx/design-system';
+	import { IxButton, IxInput, IxSelect, OptionModel, IxBadge, IxCard, ButtonVariant, BadgeVariant } from '@ironyx/design-system';
 
 	const cities: OptionModel[] = [
 	        { id: 1, label: "Rome" }, 
@@ -92,12 +90,12 @@
             <span class="caption">Button</span>
     
             <div class="bar">
-                <IxButton variant="primary" icon="ri-save-2-fill">Primary</IxButton>
-                <IxButton variant="primary" icon="ri-save-2-fill" disabled={true}>Primary</IxButton>
-                <IxButton variant="secondary" icon="ri-file-close-line">Secondary</IxButton>
-                <IxButton variant="secondary" icon="ri-file-close-line" disabled={true}>Secondary</IxButton>
-                <IxButton variant="destructive" icon="ri-delete-bin-line">Destructive</IxButton>
-                <IxButton variant="destructive" icon="ri-delete-bin-line" disabled={true}>Destructive</IxButton>
+                <IxButton variant={ButtonVariant.Primary} icon="ri-save-2-fill">Primary</IxButton>
+                <IxButton variant={ButtonVariant.Primary} icon="ri-save-2-fill" disabled={true}>Primary</IxButton>
+                <IxButton variant={ButtonVariant.Secondary} icon="ri-file-close-line">Secondary</IxButton>
+                <IxButton variant={ButtonVariant.Secondary} icon="ri-file-close-line" disabled={true}>Secondary</IxButton>
+                <IxButton variant={ButtonVariant.Destructive} icon="ri-delete-bin-line">Destructive</IxButton>
+                <IxButton variant={ButtonVariant.Destructive} icon="ri-delete-bin-line" disabled={true}>Destructive</IxButton>
             </div>
         </div>  
         
@@ -106,7 +104,7 @@
     
             <div class="bar">
                 <IxInput icon="ri-user-line" placeholder="Write Something"></IxInput>
-                <IxInput icon="ri-user-line" placeholder="Disabled" disabled={true}></IxInput>
+                <IxInput icon="ri-user-line" placeholder="Disabled"></IxInput>
             </div>
         </div>   
         
@@ -114,13 +112,13 @@
             <span class="caption">Badge</span>
     
             <div class="bar" style="width: fit-content;">
-                <IxBadge icon="ri-battery-low-line" label="10%" variant="neutral"></IxBadge>
-                <IxBadge icon="ri-battery-low-line" label="10%" variant="primary"></IxBadge>
-                <IxBadge icon="ri-battery-low-line" label="10%" variant="accent"></IxBadge>
-                <IxBadge icon="ri-battery-low-line" label="10%" variant="success"></IxBadge>
-                <IxBadge icon="ri-battery-low-line" label="10%" variant="warning"></IxBadge>
-                <IxBadge icon="ri-battery-low-line" label="10%" variant="error"></IxBadge>
-                <IxBadge icon="ri-battery-low-line" label="10%" variant="info"></IxBadge>
+                <IxBadge icon="ri-battery-low-line" label="10%" variant={BadgeVariant.Neutral}></IxBadge>
+                <IxBadge icon="ri-battery-low-line" label="10%" variant={BadgeVariant.Primary}></IxBadge>
+                <IxBadge icon="ri-battery-low-line" label="10%" variant={BadgeVariant.Accent}></IxBadge>
+                <IxBadge icon="ri-battery-low-line" label="10%" variant={BadgeVariant.Success}></IxBadge>
+                <IxBadge icon="ri-battery-low-line" label="10%" variant={BadgeVariant.Warning}></IxBadge>
+                <IxBadge icon="ri-battery-low-line" label="10%" variant={BadgeVariant.Error}></IxBadge>
+                <IxBadge icon="ri-battery-low-line" label="10%" variant={BadgeVariant.Info}></IxBadge>
             </div>
         </div>   
         
