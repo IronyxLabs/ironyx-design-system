@@ -49,7 +49,7 @@
 		Gender: {form.fields.gender.value}<br />
 		Birthplace: {form.fields.birthplace.value}
 
-		<br /><br />IsValid: {form.isValid}
+		<br /><br />IsValid: {form.valid}
 	</IxCard>
 </div>
 
