@@ -1,5 +1,7 @@
 <script lang="ts">
-    let { label, icon= '', variant = 'neutral' } = $props();
+	import { BadgeVariant } from "./badge__variant.ts";
+
+    let { label, icon= '', variant = BadgeVariant.Neutral } = $props();
 </script>
 
 <div class="component__container badge__container badge badge--{variant}">
