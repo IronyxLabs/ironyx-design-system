@@ -1,51 +1,53 @@
-import { ValidationStateHelper, type ValidationState } from "../validation_state/validation_state.ts";
-import { ValidationStatus } from "../validation_state/validation_status.ts";
-import type { IValidator } from "../validators/validator.ts";
+import {
+	ValidationStateHelper,
+	type ValidationState
+} from '../validation_state/validation_state.ts';
+import { ValidationStatus } from '../validation_state/validation_status.ts';
+import type { IValidator } from '../validators/validator.ts';
 
 export class Field<T> {
-  private initialized = false;
-  
-  public value = $state<T>();
+	private initialized = false;
 
-  private validators: IValidator<T>[] = [];
-  public validationState = $state<ValidationState>(ValidationStateHelper.pending());
+	public value = $state<T>();
 
-  public get valid(): boolean {
-    return this.validationState.status === ValidationStatus.Valid;
-  }
-  public get invalid(): boolean {
-    return this.validationState.status === ValidationStatus.Invalid;
-  }
+	private validators: IValidator<T>[] = [];
+	public validationState = $state<ValidationState>(ValidationStateHelper.pending());
 
-  constructor(params: { validators?: IValidator<T>[] } = { validators: [] }) {
-    this.validators = params.validators ?? [];
+	public get valid(): boolean {
+		return this.validationState.status === ValidationStatus.Valid;
+	}
+	public get invalid(): boolean {
+		return this.validationState.status === ValidationStatus.Invalid;
+	}
 
-    $effect(() => this.validate());
-  }
+	constructor(params: { validators?: IValidator<T>[] } = { validators: [] }) {
+		this.validators = params.validators ?? [];
 
-  public validate() {       
-    const value = this.value;
+		$effect(() => this.validate());
+	}
 
-    if (this.validators.length === 0) {
-      this.initialized = true;
-      this.validationState = ValidationStateHelper.valid();
-      return;
-    }
-    
-    if (!this.initialized)
-    {
-      this.initialized = true;
-      return;
-    }
-    
-    for (const validator of this.validators) {
-      const result = validator.validate(value);
-      if (result.status === ValidationStatus.Invalid) {
-        this.validationState = result;
-        return;
-      }
-    }    
+	public validate() {
+		const value = this.value;
 
-    this.validationState = ValidationStateHelper.valid();
-  }
+		if (this.validators.length === 0) {
+			this.initialized = true;
+			this.validationState = ValidationStateHelper.valid();
+			return;
+		}
+
+		if (!this.initialized) {
+			this.initialized = true;
+			return;
+		}
+
+		for (const validator of this.validators) {
+			const result = validator.validate(value);
+			if (result.status === ValidationStatus.Invalid) {
+				this.validationState = result;
+				return;
+			}
+		}
+
+		this.validationState = ValidationStateHelper.valid();
+	}
 }

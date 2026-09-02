@@ -57,6 +57,7 @@
     --select__background: var(--background__surface);
     --select__padding_x: var(--spacing--4);
     --select__border: var(--border__width--thin) solid var(--border);
+    --select__border--error: var(--border__width--thin) solid var(--status__border--error);
     --select__radius: var(--border__radius--md);
     --select__gap: var(--spacing--2);
     --select__foreground: var(--foreground);
@@ -330,6 +331,10 @@ div.input__container {
 
     color: var(--select__foreground);
 
+    &[invalid=true]:not([disabled]) {
+        outline: var(--select__border--error);
+    }
+    
     & option {        
         background-color: var(--option__background);
         

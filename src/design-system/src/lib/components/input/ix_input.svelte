@@ -11,10 +11,9 @@
     const context = contextFn();
 </script>
 
-<div class="component__container input__container input body__medium" disabled={contextFn().disabled}>
+<div class="component__container input__container input body__medium" disabled={contextFn().disabled} invalid="{contextFn().field.invalid}">
     {#if icon !== ''}
         <i class="{icon}"></i>
     {/if}
-    <input class="input__input" placeholder="{placeholder}" disabled={contextFn().disabled} aria-invalid="{contextFn().field.invalid}"
-            bind:value={context.field.value}/> 
+    <input class="input__input" placeholder="{placeholder}" disabled={contextFn().disabled} bind:value={context.field.value}/> 
 </div>

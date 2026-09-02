@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Field, Form, IxField, IxInput, IxSelect, IxButton, RequiredValidator, ButtonVariant } from '@ironyx/design-system';
+    import { Field, Form, IxField, IxInput, IxSelect, IxButton, RequiredValidator, ButtonVariant, AbstractValidator, ValidationStateHelper } from '@ironyx/design-system';
 	import IxCard from '$lib/components/ix-card.svelte';
 	import { gender } from '$lib/models/gender-enum';
 
@@ -7,7 +7,10 @@
 		new Form({
 			name: new Field<string>({ validators: [new RequiredValidator<string>("Name is mandatory") ] }),
 			gender: new Field<gender>(),
-			birthplace: new Field<number>()
+			birthplace: new Field<number>({ validators: [new AbstractValidator<number>(value => {
+			  if (value === 3) return ValidationStateHelper.invalid('Value is invalid here');
+			  return ValidationStateHelper.valid();
+			}) ] })
 		});
 
 	const cities = [
@@ -32,10 +35,10 @@
 			    <IxField label="Name" bind:field={form.fields.name} required={true} hint="Full name of the person">
 					<IxInput></IxInput>							
 				</IxField>
-				<IxField label="Gender" bind:field={form.fields.gender} hint="Gender of the person" disabled={!form.valid}>
+				<IxField label="Gender" bind:field={form.fields.gender} hint="Gender of the person" disabled={!form.fields.name.valid}>
 				    <IxSelect options={genders}></IxSelect>				
 				</IxField>
-				<IxField label="Birthplace" bind:field={form.fields.birthplace} disabled={!form.valid}>
+				<IxField label="Birthplace" bind:field={form.fields.birthplace} disabled={!form.fields.name.valid}>
 				    <IxSelect options={cities}></IxSelect>				
 				</IxField>
 

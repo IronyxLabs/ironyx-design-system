@@ -16,12 +16,12 @@
 {/snippet}
 
 
-<div class="component__container select body__medium">        
+<div class="component__container select body__medium" invalid={contextFn().field.invalid}>        
     {#if icon !== ''}
         <i class="{icon}"></i>
     {/if}
     <select bind:value={context.field.value} 
-        disabled={contextFn().disabled} aria-invalid={contextFn().field.invalid}>
+        disabled={contextFn().disabled}>
         {#each options as option (option)}
             {@render optionTemplate(option)}
         {/each}
