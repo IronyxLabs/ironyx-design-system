@@ -1,407 +1,407 @@
-@import "semantics/colors.scss";
-@import "semantics/typography.scss";
-@import "primitives/spacing.scss";
-@import "primitives/border.scss";
-@import "primitives/typography.scss";
+@import 'semantics/colors.scss';
+@import 'semantics/typography.scss';
+@import 'primitives/spacing.scss';
+@import 'primitives/border.scss';
+@import 'primitives/typography.scss';
 
 :root {
-    --button__padding_x: var(--spacing--4);
-    --button__radius: var(--border__radius--md);
-    --button__height: 40px;
-    --button__gap: var(--spacing--2);
-    --button__opacity--disabled: 0.5;
-    
-    --input__height: 40px;
-    --input__radius: var(--border__radius--md);
-    --input__padding_x: var(--spacing--4);
-    --input__border: var(--border__width--thin) solid var(--border);
-    --input__border--hover: var(--border__width--thin) solid var(--border--hover);
-    --input__border--focus: var(--border__width--medium) solid var(--focus);
-    --input__border--error: var(--border__width--medium) solid var(--status__border--error);
-    --input__text: var(--foreground);
-    --input__background: var(--background__surface);
-    --input__background--hover: var(--background__surface--hover);
-    --input__opacity--disabled: 0.5;
-    --input__placeholder: var(--foreground--muted);
-    --input__gap: var(--spacing--2);
+	--button__padding_x: var(--spacing--4);
+	--button__radius: var(--border__radius--md);
+	--button__height: 40px;
+	--button__gap: var(--spacing--2);
+	--button__opacity--disabled: 0.5;
 
-    --badge__height: 24px;
-    --badge__radius: var(--border__radius--full);
-    --badge__padding_x: var(--spacing--2);
-    --badge__gap: var(--spacing--1);
-    --badge__icon_size: 14px;
-    --badge__font_family: var(--typography__font_family--sans);
-    --badge__font_size: var(--typography__font_size--xs);
-    --badge__font_weight: var(--typography__font_weight--semibold);
-    --badge__background--neutral: var(--color__neutral--100);
-    --badge__foreground--neutral: var(--color__neutral--700);
-    --badge__background--primary: var(--color__primary--100);
-    --badge__foreground--primary: var(--color__primary--700);
-    --badge__background--accent: var(--color__accent--100);
-    --badge__foreground--accent: var(--color__accent--700);
-    --badge__background--success: var(--color__success--100);
-    --badge__foreground--success: var(--color__success--700);
-    --badge__background--warning: var(--color__warning--100);
-    --badge__foreground--warning: var(--color__warning--700);
-    --badge__background--error: var(--color__danger--100);
-    --badge__foreground--error: var(--color__danger--700);
-    --badge__background--info: var(--color__info--100);
-    --badge__foreground--info: var(--color__info--700);
+	--input__height: 40px;
+	--input__radius: var(--border__radius--md);
+	--input__padding_x: var(--spacing--4);
+	--input__border: var(--border__width--thin) solid var(--border);
+	--input__border--hover: var(--border__width--thin) solid var(--border--hover);
+	--input__border--focus: var(--border__width--medium) solid var(--focus);
+	--input__border--error: var(--border__width--medium) solid var(--status__border--error);
+	--input__text: var(--foreground);
+	--input__background: var(--background__surface);
+	--input__background--hover: var(--background__surface--hover);
+	--input__opacity--disabled: 0.5;
+	--input__placeholder: var(--foreground--muted);
+	--input__gap: var(--spacing--2);
 
-    --checkbox__size: 20px;
-    --checkbox__radius: var(--border__radius--md);
-    --checkbox__background--unchecked: transparent;
-    --checkbox__border: var(--border__width--thin) solid var(--border);
+	--badge__height: 24px;
+	--badge__radius: var(--border__radius--full);
+	--badge__padding_x: var(--spacing--2);
+	--badge__gap: var(--spacing--1);
+	--badge__icon_size: 14px;
+	--badge__font_family: var(--typography__font_family--sans);
+	--badge__font_size: var(--typography__font_size--xs);
+	--badge__font_weight: var(--typography__font_weight--semibold);
+	--badge__background--neutral: var(--color__neutral--100);
+	--badge__foreground--neutral: var(--color__neutral--700);
+	--badge__background--primary: var(--color__primary--100);
+	--badge__foreground--primary: var(--color__primary--700);
+	--badge__background--accent: var(--color__accent--100);
+	--badge__foreground--accent: var(--color__accent--700);
+	--badge__background--success: var(--color__success--100);
+	--badge__foreground--success: var(--color__success--700);
+	--badge__background--warning: var(--color__warning--100);
+	--badge__foreground--warning: var(--color__warning--700);
+	--badge__background--error: var(--color__danger--100);
+	--badge__foreground--error: var(--color__danger--700);
+	--badge__background--info: var(--color__info--100);
+	--badge__foreground--info: var(--color__info--700);
 
-    --select__height: 40px;
-    --select__background: var(--background__surface);
-    --select__padding_x: var(--spacing--4);
-    --select__border: var(--border__width--thin) solid var(--border);
-    --select__border--error: var(--border__width--thin) solid var(--status__border--error);
-    --select__radius: var(--border__radius--md);
-    --select__gap: var(--spacing--2);
-    --select__foreground: var(--foreground);
-    --select__opacity--disabled: 0.5;
+	--checkbox__size: 20px;
+	--checkbox__radius: var(--border__radius--md);
+	--checkbox__background--unchecked: transparent;
+	--checkbox__border: var(--border__width--thin) solid var(--border);
 
-    --option__background: transparent;
-    --option__background--hover: var(--background--muted);
-    --option__background--selected: var(--action__primary);
-    --option__background--disabled: transparent;
-    --option__padding_x: var(--spacing--4);
-    --option__height: 40px;
-    --option__foreground: var(--foreground);
-    --option__foreground--hover: var(--foreground);
-    --option__foreground--selected: var(--action__primary--foreground);
-    --option__foreground--disabled: var(--foreground--disabled);
+	--select__height: 40px;
+	--select__background: var(--background__surface);
+	--select__padding_x: var(--spacing--4);
+	--select__border: var(--border__width--thin) solid var(--border);
+	--select__border--error: var(--border__width--thin) solid var(--status__border--error);
+	--select__radius: var(--border__radius--md);
+	--select__gap: var(--spacing--2);
+	--select__foreground: var(--foreground);
+	--select__opacity--disabled: 0.5;
 
-    --card__padding: var(--spacing--4);
-    --card__background: var(--background__surface);
-    --card__background--hover: var(--background__surface--subtle);
-    --card__background--hover: var(--background__surface);
-    --card__border: var(--border__width--thin) solid var(--border);
-    --card__border--hover: var(--border__width--thin) solid var(--border--hover);
-    --card__border--focus: var(--border__width--medium) solid var(--focus);
-    --card__radius: var(--border__radius--md);
+	--option__background: transparent;
+	--option__background--hover: var(--background--muted);
+	--option__background--selected: var(--action__primary);
+	--option__background--disabled: transparent;
+	--option__padding_x: var(--spacing--4);
+	--option__height: 40px;
+	--option__foreground: var(--foreground);
+	--option__foreground--hover: var(--foreground);
+	--option__foreground--selected: var(--action__primary--foreground);
+	--option__foreground--disabled: var(--foreground--disabled);
 
-    --caption__foreground--disabled: var(--foreground--disabled);
-    --label__foreground--disabled: var(--foreground--disabled);
+	--card__padding: var(--spacing--4);
+	--card__background: var(--background__surface);
+	--card__background--hover: var(--background__surface--subtle);
+	--card__background--hover: var(--background__surface);
+	--card__border: var(--border__width--thin) solid var(--border);
+	--card__border--hover: var(--border__width--thin) solid var(--border--hover);
+	--card__border--focus: var(--border__width--medium) solid var(--focus);
+	--card__radius: var(--border__radius--md);
+
+	--caption__foreground--disabled: var(--foreground--disabled);
+	--label__foreground--disabled: var(--foreground--disabled);
 }
 
 i {
-    font-size: 24px;
+	font-size: 24px;
 }
 
-input:not([type=checkbox]) {
-    width: 100%;
-    height: 100%;
+input:not([type='checkbox']) {
+	width: 100%;
+	height: 100%;
 
-    background-color: transparent;
-    border-color: transparent;
+	background-color: transparent;
+	border-color: transparent;
 
-    color: inherit;
+	color: inherit;
 
-    &:focus-visible {
-        outline-style: none;
-    }
+	&:focus-visible {
+		outline-style: none;
+	}
 }
 
-input[type=checkbox] {
-    appearance: none;    
+input[type='checkbox'] {
+	appearance: none;
 
-    display: grid;
+	display: grid;
 
-    place-content: center;
+	place-content: center;
 
-    cursor: pointer;
+	cursor: pointer;
 }
 
 select {
-    appearance: none;
-    
-    width: 100%;
+	appearance: none;
 
-    background-color: transparent;
-    border-color: transparent;
+	width: 100%;
 
-    color: inherit;
+	background-color: transparent;
+	border-color: transparent;
 
-    &:focus-visible {
-        outline-style: none;
-    }
+	color: inherit;
 
-    &:disabled {
-        opacity: var(--select__opacity--disabled);
-    }
+	&:focus-visible {
+		outline-style: none;
+	}
 
-    @supports (appearance: base-select) {
-        &,
-        &::picker(select) {
-            appearance: base-select;
+	&:disabled {
+		opacity: var(--select__opacity--disabled);
+	}
 
-            align-content: center;
-        }   
-   
-        &::picker(select) {
-            background-color: var(--select__background);
-    
-            border: var(--select__border);
-            border-radius: var(--select__radius);
-        }
-    }
+	@supports (appearance: base-select) {
+		&,
+		&::picker(select) {
+			appearance: base-select;
+
+			align-content: center;
+		}
+
+		&::picker(select) {
+			background-color: var(--select__background);
+
+			border: var(--select__border);
+			border-radius: var(--select__radius);
+		}
+	}
 }
 
 option {
-    &::checkmark {
-        display: none;
-    }
+	&::checkmark {
+		display: none;
+	}
 }
 
 div.component__container {
-    display: flex;
+	display: flex;
 
-    justify-content: center;
-    align-items: center;
+	justify-content: center;
+	align-items: center;
 
-    width: 100%;
+	width: 100%;
 }
 
-button.button {    
-        padding-left: var(--button__padding_x);
-        padding-right: var(--button__padding_x);
-    
-        border-radius: var(--button__radius);
-    
-        height: var(--button__height);    
+button.button {
+	padding-left: var(--button__padding_x);
+	padding-right: var(--button__padding_x);
+
+	border-radius: var(--button__radius);
+
+	height: var(--button__height);
 }
 
 div.button__container {
-    gap: var(--button__gap);    
+	gap: var(--button__gap);
 }
 
-button.button--primary {    
-    background-color: var(--action__primary);
-    
-    color: var(--action__primary--foreground);
-    
-    &:hover:not(:disabled) {
-        background-color: var(--action__primary--hover);
-    }
+button.button--primary {
+	background-color: var(--action__primary);
 
-    &:disabled {
-        opacity: var(--button__opacity--disabled);
-    }
+	color: var(--action__primary--foreground);
+
+	&:hover:not(:disabled) {
+		background-color: var(--action__primary--hover);
+	}
+
+	&:disabled {
+		opacity: var(--button__opacity--disabled);
+	}
 }
 
-button.button--secondary {    
-    background-color: var(--action__secondary);
-    
-    color: var(--action__secondary--foreground);
-    
-    &:hover:not(:disabled) {
-        background-color: var(--action__secondary--hover);
-    }
+button.button--secondary {
+	background-color: var(--action__secondary);
 
-    &:disabled {
-        opacity: var(--button__opacity--disabled);
-    }
+	color: var(--action__secondary--foreground);
+
+	&:hover:not(:disabled) {
+		background-color: var(--action__secondary--hover);
+	}
+
+	&:disabled {
+		opacity: var(--button__opacity--disabled);
+	}
 }
 
-button.button--destructive {    
-    background-color: var(--action__destructive);
-    
-    color: var(--action__destructive--foreground);
-    
-    &:hover:not(:disabled) {
-        background-color: var(--action__destructive--hover);
-    }
+button.button--destructive {
+	background-color: var(--action__destructive);
 
-    &:disabled {
-        opacity: var(--button__opacity--disabled);
-    }
+	color: var(--action__destructive--foreground);
+
+	&:hover:not(:disabled) {
+		background-color: var(--action__destructive--hover);
+	}
+
+	&:disabled {
+		opacity: var(--button__opacity--disabled);
+	}
 }
 
 .input {
-    height: var(--input__height);
+	height: var(--input__height);
 
-    padding-left: var(--input__padding_x);
-    padding-right: var(--input__padding_x);
+	padding-left: var(--input__padding_x);
+	padding-right: var(--input__padding_x);
 
-    border-radius: var(--input__radius);
-    border: var(--input__border);
+	border-radius: var(--input__radius);
+	border: var(--input__border);
 
-    color: var(--input__text);
-    background-color: var(--input__background);
+	color: var(--input__text);
+	background-color: var(--input__background);
 
-    &::placeholder {
-        color: var(--input__placeholder);
-    }
+	&::placeholder {
+		color: var(--input__placeholder);
+	}
 
-    &:hover:not([disabled]) {
-        background-color: var(--input__background--hover);
-        border: var(--input__border--hover);
-    }
+	&:hover:not([disabled]) {
+		background-color: var(--input__background--hover);
+		border: var(--input__border--hover);
+	}
 
-    &:focus-within:not([disabled]) {
-        outline: var(--input__border--focus);
-    }
+	&:focus-within:not([disabled]) {
+		outline: var(--input__border--focus);
+	}
 
-    &[invalid=true]:not([disabled]) {
-        outline: var(--input__border--error);
-    }
+	&[invalid='true']:not([disabled]) {
+		outline: var(--input__border--error);
+	}
 
-    &[disabled] {
-        opacity: var(--input__opacity--disabled);
-    }
+	&[disabled] {
+		opacity: var(--input__opacity--disabled);
+	}
 }
 
 div.input__container {
-   gap: var(--input__gap); 
+	gap: var(--input__gap);
 }
 
 .badge {
-    height: var(--badge__height);
+	height: var(--badge__height);
 
-    padding-left: var(--badge__padding_x);
-    padding-right: var(--badge__padding_x);
+	padding-left: var(--badge__padding_x);
+	padding-right: var(--badge__padding_x);
 
-    border-radius: var(--badge__radius);
+	border-radius: var(--badge__radius);
 
-    font-family: var(--badge__font_family);
-    font-size: var(--badge__font_size);
-    font-weight: var(--badge__font_weight);
+	font-family: var(--badge__font_family);
+	font-size: var(--badge__font_size);
+	font-weight: var(--badge__font_weight);
 }
 
 .badge__container {
-    gap: var(--badge__gap);
+	gap: var(--badge__gap);
 }
 
 .badge__icon {
-    font-size: 14px;
+	font-size: 14px;
 }
 
 .badge--neutral {
-    background-color: var(--badge__background--neutral);
-    color: var(--badge__foreground--neutral);
+	background-color: var(--badge__background--neutral);
+	color: var(--badge__foreground--neutral);
 }
 
 .badge--primary {
-    background-color: var(--badge__background--primary);
-    color: var(--badge__foreground--primary);
+	background-color: var(--badge__background--primary);
+	color: var(--badge__foreground--primary);
 }
 
 .badge--accent {
-    background-color: var(--badge__background--accent);
-    color: var(--badge__foreground--accent);
+	background-color: var(--badge__background--accent);
+	color: var(--badge__foreground--accent);
 }
 
 .badge--success {
-    background-color: var(--badge__background--success);
-    color: var(--badge__foreground--success);
+	background-color: var(--badge__background--success);
+	color: var(--badge__foreground--success);
 }
 
 .badge--warning {
-    background-color: var(--badge__background--warning);
-    color: var(--badge__foreground--warning);
+	background-color: var(--badge__background--warning);
+	color: var(--badge__foreground--warning);
 }
 
 .badge--error {
-    background-color: var(--badge__background--error);
-    color: var(--badge__foreground--error);
+	background-color: var(--badge__background--error);
+	color: var(--badge__foreground--error);
 }
 
 .badge--info {
-    background-color: var(--badge__background--info);
-    color: var(--badge__foreground--info);
+	background-color: var(--badge__background--info);
+	color: var(--badge__foreground--info);
 }
 
-.select {    
-    height: var(--select__height);
-    
-    background-color: var(--select__background);
-    
-    border: var(--select__border);
-    border-radius: var(--select__radius);
+.select {
+	height: var(--select__height);
 
-    padding-left: var(--select__padding_x);
-    padding-right: var(--select__padding_x);
+	background-color: var(--select__background);
 
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: var(--select__gap);
+	border: var(--select__border);
+	border-radius: var(--select__radius);
 
-    color: var(--select__foreground);
+	padding-left: var(--select__padding_x);
+	padding-right: var(--select__padding_x);
 
-    &[invalid=true]:not([disabled]) {
-        outline: var(--select__border--error);
-    }
-    
-    & option {        
-        background-color: var(--option__background);
-        
-        color: var(--option__foreground);
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: var(--select__gap);
 
-        padding-right: var(--option__padding_x);
-        padding-left: var(--option__padding_x);
+	color: var(--select__foreground);
 
-        height: var(--option__height);
-    } 
-    
-    & option:enabled:hover {
-        background-color: var(--option__background--hover);
-        color: var(--option__foreground--hover);
-    }   
+	&[invalid='true']:not([disabled]) {
+		outline: var(--select__border--error);
+	}
 
-    & option:checked {
-        background-color: var(--option__background--selected);
-        color: var(--option__foreground--selected)
-    }
+	& option {
+		background-color: var(--option__background);
 
-    & option:disabled {
-        background-color: var(--option__background--disabled);
-        color: var(--option__foreground--disabled);
-    }
+		color: var(--option__foreground);
 
-    &::picker(select) {
-        background-color: var(--select__background);
-    }
+		padding-right: var(--option__padding_x);
+		padding-left: var(--option__padding_x);
+
+		height: var(--option__height);
+	}
+
+	& option:enabled:hover {
+		background-color: var(--option__background--hover);
+		color: var(--option__foreground--hover);
+	}
+
+	& option:checked {
+		background-color: var(--option__background--selected);
+		color: var(--option__foreground--selected);
+	}
+
+	& option:disabled {
+		background-color: var(--option__background--disabled);
+		color: var(--option__foreground--disabled);
+	}
+
+	&::picker(select) {
+		background-color: var(--select__background);
+	}
 }
 
 .card {
-    width: 100%;
-    height: 100%;
+	width: 100%;
+	height: 100%;
 
-    padding: var(--card__padding);
+	padding: var(--card__padding);
 
-    background-color: var(--card__background);
+	background-color: var(--card__background);
 
-    border: var(--card__border);
-    border-radius: var(--card__radius);
+	border: var(--card__border);
+	border-radius: var(--card__radius);
 
-    &:hover {
-        background-color: var(--card__background--hover);
-        border: var(--card__border--hover);
-    }
-    
-    &:focus-within {
-        background-color: var(--card__background--focus);
-        outline: var(--card__border--focus);
-    }
+	&:hover {
+		background-color: var(--card__background--hover);
+		border: var(--card__border--hover);
+	}
+
+	&:focus-within {
+		background-color: var(--card__background--focus);
+		outline: var(--card__border--focus);
+	}
 }
 
 .field {
-    display: grid;
-    grid-template-rows: auto 1fr 1rem;
-    gap: var(--spacing--1);
+	display: grid;
+	grid-template-rows: auto 1fr 1rem;
+	gap: var(--spacing--1);
 }
 
 .text__error {
-    color: var(--status__foreground--error);
+	color: var(--status__foreground--error);
 }
 
 .caption--disabled {
-    color: var(--caption__foreground--disabled);
+	color: var(--caption__foreground--disabled);
 }
 
 .label--disabled {
-    color: var(--label__foreground--disabled);
+	color: var(--label__foreground--disabled);
 }
