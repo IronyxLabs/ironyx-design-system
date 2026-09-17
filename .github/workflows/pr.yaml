@@ -22,3 +22,4 @@ jobs:
     uses: IronyxLabs/ironyx-scripts/.github/workflows/svelte_pr-pipeline.yaml@feature/12-create-ci-pipeline-for-svelte
     with:
       working-directory: src/design-system
+      testspace-token: ${{ secrets.TESTSPACE_TOKEN }}
