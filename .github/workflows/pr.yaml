@@ -1,0 +1,22 @@
+name: PR
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+      - release/*
+
+permissions:
+  contents: read
+  packages: read
+
+run-name: ${{ github.event_name == 'pull_request' && format('[PR] - {1} {0}',  github.event.pull_request.number, github.event.pull_request.title) || format('[MANUAL] - Run on {0} branch', github.event.pull_request.number, github.ref_name) }}
+
+jobs:
+  ci:
+    uses: IronyxLabs/ironyx-scripts/.github/workflows/svelte_pr-pipeline.yaml@feature/12-create-ci-pipeline-for-svelte
