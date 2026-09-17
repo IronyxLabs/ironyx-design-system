@@ -20,3 +20,5 @@ run-name: ${{ github.event_name == 'pull_request' && format('[PR] - {1} {0}',  g
 jobs:
   ci:
     uses: IronyxLabs/ironyx-scripts/.github/workflows/svelte_pr-pipeline.yaml@feature/12-create-ci-pipeline-for-svelte
+    with:
+      pnpm-lock_path: src/design-system/pnpm-lock.yaml
