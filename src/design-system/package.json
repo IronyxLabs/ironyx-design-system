@@ -13,7 +13,7 @@
 		"format": "prettier --write .",
 		"test": "vitest",
 		"test:run": "vitest run",
-		"test:ci": "vitest run --reporter junit --coverage --outputFile ./test_results/test.xml --coverage.reporter clover"
+		"test:ci": "vitest run --reporter junit --coverage --outputFile ./test_results/test.xml --coverage.reporter lcov"
 	},
 	"files": [
 		"dist",
