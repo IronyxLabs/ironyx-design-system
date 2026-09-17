@@ -1,9 +1,8 @@
 import { render } from '@testing-library/svelte';
-import { describe } from 'node:test';
 import IxButton from './ix-button.svelte';
 import { ButtonVariant } from './button_variants.js';
 import { createRawSnippet } from 'svelte';
-import { expect, it } from 'vitest';
+import { expect, it, describe } from 'vitest';
 import { faker } from '@faker-js/faker';
 
 describe('BTN - IxButton', () => {
