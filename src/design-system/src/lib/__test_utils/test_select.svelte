@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
 	import { IxSelect, IxField, type OptionModel, Field, type IValidator } from '../index.ts';
 
 	let {

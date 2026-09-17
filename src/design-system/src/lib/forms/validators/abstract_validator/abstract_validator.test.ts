@@ -12,7 +12,7 @@ describe('ABV - AbstractValidator', () => {
 		const sut = createSut(() => validationState);
 
 		// Act
-		var result = sut.validate(faker.string.alphanumeric());
+		const result = sut.validate(faker.string.alphanumeric());
 
 		// Assert
 		expect(result).toBe(validationState);
