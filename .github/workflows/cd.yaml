@@ -1,0 +1,19 @@
+name: CD
+
+run-name: "[RELEASE] - Publish npm Packages"
+
+permissions:
+  contents: read
+  actions: read
+  packages: write
+
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+
+jobs:
+  cd:
+    uses: IronyxLabs/ironyx-scripts/.github/workflows/npm_package_cd-pipeline.yaml@feature/13-create-cd-pipeline-for-svelte-package
+    secrets:
+      github-token: ${{ secrets.GITHUB_TOKEN }}

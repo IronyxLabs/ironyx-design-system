@@ -1,6 +1,9 @@
 {
 	"name": "@ironyx/design-system",
 	"version": "0.0.1",
+	"publishConfig": {
+	  "registry": "https://npm.pkg.github.com"
+	},
 	"scripts": {
 		"dev": "svelte-package --watch",
 		"build": "svelte-kit sync && svelte-package && publint",
