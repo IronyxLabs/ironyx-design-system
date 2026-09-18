@@ -24,3 +24,5 @@ jobs:
       working-directory: src/design-system
     secrets:
       testspace-token: ${{ secrets.TESTSPACE_TOKEN }}
+      sonar-token: ${{ secrets.SONAR_TOKEN }}
+      sonar-project_key: IronyxLabs_ironyx-design-system
