@@ -1,9 +1,9 @@
 import { faker } from '@faker-js/faker';
 import { fireEvent, render } from '@testing-library/svelte';
 import { describe, expect, it } from 'vitest';
-import { OptionModelFaker } from '../../__test_utils/option-model.faker.ts';
-import TestSelect from '../../__test_utils/test_select.svelte';
-import { ValidatorFaker } from '../../__test_utils/validator.faker.ts';
+import { OptionModelFaker } from '../../../__test_utils__/option-model.faker.ts';
+import TestSelect from '../../../__test_utils__/test_select.svelte';
+import { ValidatorFaker } from '../../../__test_utils__/validator.faker.ts';
 import type { IValidator } from '../../forms/validators/validator.ts';
 
 describe('ISC - IxSelect', () => {

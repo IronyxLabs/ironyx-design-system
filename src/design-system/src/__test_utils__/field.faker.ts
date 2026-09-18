@@ -1,5 +1,5 @@
-import type { Field } from '../forms/field/field.svelte.ts';
-import { ValidationStateHelper } from '../forms/validation_state/validation_state.ts';
+import type { Field } from '../lib/forms/field/field.svelte.ts';
+import { ValidationStateHelper } from '../lib/forms/validation_state/validation_state.ts';
 import { faker } from '@faker-js/faker';
 import { vi } from 'vitest';
 

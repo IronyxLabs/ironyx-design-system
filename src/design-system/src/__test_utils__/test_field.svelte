@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { IxField, IxInput, type IValidator } from '../index.ts';
-	import { Field } from '../forms/field/field.svelte.ts';
+	import { IxField, IxInput, type IValidator } from '../lib/index.ts';
+	import { Field } from '../lib/forms/field/field.svelte.ts';
 
 	let { validator }: { validator: IValidator<string> } = $props();
 

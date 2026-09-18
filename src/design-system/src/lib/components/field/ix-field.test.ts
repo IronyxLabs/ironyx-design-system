@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/svelte/svelte5';
 import IxField from './ix-field.svelte';
 import { faker } from '@faker-js/faker';
 import { createRawSnippet } from 'svelte';
-import { FieldFaker } from '../../__test_utils/field.faker.ts';
+import { FieldFaker } from '../../../__test_utils__/field.faker.ts';
 
 describe('IxField', () => {
 	it('[UNIT][IFD-001]: Set Label', () => {

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { IxSelect, IxField, type OptionModel, Field, type IValidator } from '../index.ts';
+	import { IxSelect, IxField, type OptionModel, Field, type IValidator } from '../lib/index.ts';
 
 	let {
 		validator,
