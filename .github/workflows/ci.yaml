@@ -14,7 +14,7 @@ run-name: ${{ format('[TAG] - Build version {0}', github.ref_name) }}
 
 jobs:
   ci:
-    uses: IronyxLabs/ironyx-scripts/.github/workflows/svelte_package_ci-pipeline.yaml@feature/13-create-cd-pipeline-for-svelte-package
+    uses: IronyxLabs/ironyx-scripts/.github/workflows/svelte_package_ci-pipeline.yaml@v1
     with:
       working-directory: src/design-system
       sonar-project_key: IronyxLabs_ironyx-design-system
