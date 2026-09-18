@@ -1,5 +1,5 @@
 {
-	"name": "@ironyx/design-system",
+	"name": "@ironyxlabs/design-system",
 	"version": "0.0.1",
 	"publishConfig": {
 		"registry": "https://npm.pkg.github.com"
