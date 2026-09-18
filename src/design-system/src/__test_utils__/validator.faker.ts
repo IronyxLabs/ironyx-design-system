@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker';
 import { vi } from 'vitest';
-import { ValidationStatus } from '../forms/validation_state/validation_status.ts';
-import type { IValidator } from '../index.ts';
+import { ValidationStatus } from '../lib/forms/validation_state/validation_status.ts';
+import type { IValidator } from '../lib/index.ts';
 
 export class ValidatorFaker {
 	public static random(): IValidator<string> {

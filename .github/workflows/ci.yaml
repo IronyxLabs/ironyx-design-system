@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+  packages: read
+
+run-name: ${{ format('[TAG] - Build version {0}', github.ref_name) }}
+
+jobs:
+  ci:
+    uses: IronyxLabs/ironyx-scripts/.github/workflows/svelte_package_ci-pipeline.yaml@v1
+    with:
+      working-directory: src/design-system
+      sonar-project_key: IronyxLabs_ironyx-design-system
+    secrets:
+      testspace-token: ${{ secrets.TESTSPACE_TOKEN }}
+      sonar-token: ${{ secrets.SONAR_TOKEN }}

@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { describe, expect, it } from 'vitest';
-import { ValidationStateFaker } from '../../../__test_utils/validation_state.faker.ts';
+import { ValidationStateFaker } from '../../../../__test_utils__/validation_state.faker.ts';
 import { AbstractValidator, type ValidationState } from '../../../index.ts';
 
 describe('ABV - AbstractValidator', () => {
@@ -12,7 +12,7 @@ describe('ABV - AbstractValidator', () => {
 		const sut = createSut(() => validationState);
 
 		// Act
-		var result = sut.validate(faker.string.alphanumeric());
+		const result = sut.validate(faker.string.alphanumeric());
 
 		// Assert
 		expect(result).toBe(validationState);

@@ -1,6 +1,9 @@
 {
-	"name": "@ironyx/design-system",
+	"name": "@ironyxlabs/design-system",
 	"version": "0.0.1",
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com"
+	},
 	"scripts": {
 		"dev": "svelte-package --watch",
 		"build": "svelte-kit sync && svelte-package && publint",
@@ -12,7 +15,8 @@
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
 		"test": "vitest",
-		"test:run": "vitest run"
+		"test:run": "vitest run",
+		"test:ci": "vitest run --reporter junit --coverage --outputFile ./test_results/test.xml --coverage.reporter lcov"
 	},
 	"files": [
 		"dist",

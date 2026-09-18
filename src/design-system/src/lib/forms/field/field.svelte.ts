@@ -20,8 +20,8 @@ export class Field<T> {
 		return this.validationState.status === ValidationStatus.Invalid;
 	}
 
-	constructor(params: { validators?: IValidator<T>[] } = { validators: [] }) {
-		this.validators = params.validators ?? [];
+	constructor(params: { validators?: IValidator<T>[] }) {
+		this.validators = params?.validators ?? [];
 
 		$effect(() => this.validate());
 	}

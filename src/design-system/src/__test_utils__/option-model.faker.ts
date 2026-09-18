@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import type { OptionModel } from '../components/select/option_model.ts';
+import type { OptionModel } from '../lib/components/select/option_model.ts';
 
 export class OptionModelFaker {
 	public static random(): OptionModel {
