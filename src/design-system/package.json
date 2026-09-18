@@ -2,7 +2,7 @@
 	"name": "@ironyx/design-system",
 	"version": "0.0.1",
 	"publishConfig": {
-	  "registry": "https://npm.pkg.github.com"
+		"registry": "https://npm.pkg.github.com"
 	},
 	"scripts": {
 		"dev": "svelte-package --watch",
