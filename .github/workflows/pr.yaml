@@ -18,7 +18,7 @@ run-name: ${{ github.event_name == 'pull_request' && format('[PR] - {1} {0}',  g
 
 jobs:
   ci:
-    uses: IronyxLabs/ironyx-scripts/.github/workflows/svelte_pr-pipeline.yaml@feature/12-create-ci-pipeline-for-svelte
+    uses: IronyxLabs/ironyx-scripts/.github/workflows/svelte_pr-pipeline.yaml@v1
     with:
       working-directory: src/design-system
       sonar-project_key: IronyxLabs_ironyx-design-system
