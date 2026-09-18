@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+      - release/*
+
+permissions:
+  contents: read
+  packages: read
+
+run-name: ${{ github.event_name == 'pull_request' && format('[PR] - {1} {0}',  github.event.pull_request.number, github.event.pull_request.title) || format('[MANUAL] - Run on {0} branch', github.event.pull_request.number, github.ref_name) }}
+
+jobs:
+  ci:
+    uses: IronyxLabs/ironyx-scripts/.github/workflows/svelte_package_ci-pipeline.yaml@feature/13-create-cd-pipeline-for-svelte-package
+    with:
+      working-directory: src/design-system
+      sonar-project_key: IronyxLabs_ironyx-design-system
+    secrets:
+      testspace-token: ${{ secrets.TESTSPACE_TOKEN }}
+      sonar-token: ${{ secrets.SONAR_TOKEN }}
