@@ -1,14 +1,10 @@
 name: CI
 
 on:
+  workflow_dispatch:
   push:
-    branches:
-      - develop
-  pull_request:
-    branches:
-      - main
-      - develop
-      - release/*
+    tags:
+      - "v*"
 
 permissions:
   contents: read
