@@ -38,13 +38,13 @@
 		"./styles": "./dist/styles/styles.scss"
 	},
 	"peerDependencies": {
+	  "@sveltejs/kit": "^2.70.3",
 		"svelte": "^5.0.0"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
 		"@faker-js/faker": "^10.6.0",
 		"@sveltejs/adapter-auto": "^7.0.1",
-		"@sveltejs/kit": "^2.63.0",
 		"@sveltejs/package": "^2.5.8",
 		"@sveltejs/vite-plugin-svelte": "^7.1.2",
 		"@testing-library/jest-dom": "^7.0.1",

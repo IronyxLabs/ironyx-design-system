@@ -1,21 +1,26 @@
-import type { isActionFailure } from "@sveltejs/kit";
-import { render } from "@testing-library/svelte";
-import { describe, expect, it } from "vitest";
-import IxNavigation from "./ix_navigation.svelte";
+import { fireEvent, render } from "@testing-library/svelte";
+import IxNavigationItem from "./ix_navigation_item.svelte";
 import { faker } from "@faker-js/faker";
+import { goto } from '$app/navigation';
+import { describe, expect, it, vi } from "vitest";
 
 describe('NAV - IxNavigation', () => {
-  const createSUT = (label: string, icon: string) => render(IxNavigation, {
+  const createSUT = (label: string, icon: string, path: string) => render(IxNavigationItem, {
     label: label,
-    icon: icon
+    icon: icon,
+    path: path
   })
+  
+  vi.mock('$app/navigation', () => ({
+      goto: vi.fn()
+  }));
   
   it('[UNIT][NAV-001]: Show label', () => {
     // Arrange
     const label = faker.string.alphanumeric();
     
     // Act
-    const sut = createSUT(label, '');
+    const sut = createSUT(label, '', '');
      
     // Assert
     expect(sut.getByText(label)).toBeInTheDocument();
@@ -26,7 +31,7 @@ describe('NAV - IxNavigation', () => {
     const icon = faker.string.alphanumeric();
     
     // Act
-    const sut = createSUT('', icon);
+    const sut = createSUT('', icon, '');
      
     // Assert
     expect(sut.container.querySelector('i')).toHaveClass(icon);

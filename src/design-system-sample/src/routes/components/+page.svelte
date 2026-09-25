@@ -139,5 +139,6 @@
         </div>  
     </div>
 
-    <IxNavigationItem label='Cities' icon='ri-building-line'></IxNavigationItem>
+    <IxNavigationItem label='Components' icon='ri-building-line' path='/components'></IxNavigationItem>
+    <IxNavigationItem label='Sample' icon='ri-building-line' path='/sample'></IxNavigationItem>
 </div>
