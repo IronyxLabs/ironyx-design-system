@@ -1,8 +1,7 @@
-import { fireEvent, render } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
 import IxNavigationItem from './ix_navigation_item.svelte';
 import { faker } from '@faker-js/faker';
-import { goto } from '$app/navigation';
-import { describe, expect, it, vi } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 describe('NAV - IxNavigation', () => {
 	const createSUT = (label: string, icon: string, path: string) =>
@@ -11,10 +10,6 @@ describe('NAV - IxNavigation', () => {
 			icon: icon,
 			path: path
 		});
-
-	vi.mock('$app/navigation', () => ({
-		goto: vi.fn()
-	}));
 
 	it('[UNIT][NAV-001]: Show label', () => {
 		// Arrange
