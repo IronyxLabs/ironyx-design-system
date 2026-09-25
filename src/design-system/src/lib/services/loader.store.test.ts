@@ -1,7 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { describe, expect, it } from 'vitest';
 import { LoaderStore } from './loader.store.ts';
-import { Loader } from './loader.svelte.ts';
 
 describe('LDS - Loader Store', () => {
 	const createSUT = () => new LoaderStore();
