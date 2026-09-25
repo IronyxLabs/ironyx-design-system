@@ -414,32 +414,32 @@ div.input__container {
 }
 
 .navigation_item {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    column-gap: var(--spacing--3);
-    
-    height: 40px;
+	display: grid;
+	grid-template-columns: auto 1fr;
+	column-gap: var(--spacing--3);
 
-    align-items: center;
+	height: 40px;
 
-    padding-left: var(--spacing--3);
-    padding-right: var(--spacing--3);
+	align-items: center;
 
-    color: var(--navigation_item__foreground);
+	padding-left: var(--spacing--3);
+	padding-right: var(--spacing--3);
 
-    border-radius: var(--navigation_item__radius);
+	color: var(--navigation_item__foreground);
 
-    cursor: pointer;
+	border-radius: var(--navigation_item__radius);
+
+	cursor: pointer;
 }
 
 .navigation_item:hover {
-    background-color: var(--navigation_item__background--hover);
-    
-    color: var(--navigation_item__foreground--hover);
+	background-color: var(--navigation_item__background--hover);
+
+	color: var(--navigation_item__foreground--hover);
 }
 
-.navigation_item[active=true] {
-    background-color: var(--navigation_item__background--active);
-    
-    color: var(--navigation_item__foreground--active);
+.navigation_item[active='true'] {
+	background-color: var(--navigation_item__background--active);
+
+	color: var(--navigation_item__foreground--active);
 }
