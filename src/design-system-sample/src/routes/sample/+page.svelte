@@ -1,15 +1,31 @@
 <script lang="ts">
-    import { Field, Form, IxField, IxInput, IxSelect, IxButton, RequiredValidator, ButtonVariant, AbstractValidator, ValidationStateHelper, IxCard } from '@ironyx/design-system';
+	import {
+		Field,
+		Form,
+		IxField,
+		IxInput,
+		IxSelect,
+		IxButton,
+		RequiredValidator,
+		ButtonVariant,
+		AbstractValidator,
+		ValidationStateHelper,
+		IxCard
+	} from '@ironyxlabs/design-system';
 	import { gender } from '$lib/models/gender-enum';
 
-	const form: Form<{name: Field<string>, gender: Field<gender>, birthplace: Field<number>}> = 
+	const form: Form<{ name: Field<string>; gender: Field<gender>; birthplace: Field<number> }> =
 		new Form({
-			name: new Field<string>({ validators: [new RequiredValidator<string>("Name is mandatory") ] }),
+			name: new Field<string>({ validators: [new RequiredValidator<string>('Name is mandatory')] }),
 			gender: new Field<gender>(),
-			birthplace: new Field<number>({ validators: [new AbstractValidator<number>(value => {
-			  if (value === 3) return ValidationStateHelper.invalid('Value is invalid here');
-			  return ValidationStateHelper.valid();
-			}) ] })
+			birthplace: new Field<number>({
+				validators: [
+					new AbstractValidator<number>((value) => {
+						if (value === 3) return ValidationStateHelper.invalid('Value is invalid here');
+						return ValidationStateHelper.valid();
+					})
+				]
+			})
 		});
 
 	const cities = [
@@ -31,17 +47,35 @@
 			<span class="heading__h4">Personal Information</span>
 
 			<div class="form">
-			    <IxField label="Name" bind:field={form.fields.name} required={true} hint="Full name of the person">
-					<IxInput></IxInput>							
+				<IxField
+					label="Name"
+					bind:field={form.fields.name}
+					required={true}
+					hint="Full name of the person"
+				>
+					<IxInput></IxInput>
 				</IxField>
-				<IxField label="Gender" bind:field={form.fields.gender} hint="Gender of the person" disabled={!form.fields.name.valid}>
-				    <IxSelect options={genders}></IxSelect>				
+				<IxField
+					label="Gender"
+					bind:field={form.fields.gender}
+					hint="Gender of the person"
+					disabled={!form.fields.name.valid}
+				>
+					<IxSelect options={genders}></IxSelect>
 				</IxField>
-				<IxField label="Birthplace" bind:field={form.fields.birthplace} disabled={!form.fields.name.valid}>
-				    <IxSelect options={cities}></IxSelect>				
+				<IxField
+					label="Birthplace"
+					bind:field={form.fields.birthplace}
+					disabled={!form.fields.name.valid}
+				>
+					<IxSelect options={cities}></IxSelect>
 				</IxField>
 
-				<IxButton variant={ButtonVariant.Primary} disabled={!form.valid} onclick={() => console.log("Save OnClick")}>Save</IxButton>
+				<IxButton
+					variant={ButtonVariant.Primary}
+					disabled={!form.valid}
+					onclick={() => console.log('Save OnClick')}>Save</IxButton
+				>
 			</div>
 		</div>
 	</IxCard>

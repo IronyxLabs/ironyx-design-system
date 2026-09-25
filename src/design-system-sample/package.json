@@ -33,7 +33,7 @@
 		"vite": "^8.0.16"
 	},
 	"dependencies": {
-		"@ironyx/design-system": "file:../design-system",
+		"@ironyxlabs/design-system": "file:../design-system",
 		"remixicon": "^4.9.1"
 	}
 }
