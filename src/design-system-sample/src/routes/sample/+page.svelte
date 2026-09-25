@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Field, Form, IxField, IxInput, IxSelect, IxButton, RequiredValidator, ButtonVariant, AbstractValidator, ValidationStateHelper, IxCard } from '@ironyx/design-system';
+    import { Field, Form, IxField, IxInput, IxSelect, IxButton, RequiredValidator, ButtonVariant, AbstractValidator, ValidationStateHelper, IxCard } from '@ironyxlabs/design-system';
 	import { gender } from '$lib/models/gender-enum';
 
 	const form: Form<{name: Field<string>, gender: Field<gender>, birthplace: Field<number>}> = 

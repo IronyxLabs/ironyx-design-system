@@ -8,9 +8,9 @@ importers:
 
   .:
     dependencies:
-      '@ironyx/design-system':
+      '@ironyxlabs/design-system':
         specifier: file:../design-system
-        version: '@ironyxlabs/design-system@file:../design-system(svelte@5.56.10(@typescript-eslint/types@8.68.0))'
+        version: file:../design-system(svelte@5.56.10(@typescript-eslint/types@8.68.0))
       remixicon:
         specifier: ^4.9.1
         version: 4.9.1

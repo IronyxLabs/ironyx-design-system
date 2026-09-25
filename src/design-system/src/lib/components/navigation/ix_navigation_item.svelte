@@ -1,8 +1,8 @@
 <script lang="ts">
-    let { label, icon, path }: { label: string, icon: string, path: string } = $props();
+    let { label, icon }: { label: string, icon: string } = $props();
 </script>
 
 <div class="navigation_item">
+    <i class="{icon}"></i>
     <span class="navigation_item__label">{label}</span>
-    <i class="navigation_item__icon {icon}"></i>    
 </div>

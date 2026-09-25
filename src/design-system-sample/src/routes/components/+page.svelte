@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { IxButton, IxInput, IxSelect, OptionModel, IxBadge, IxCard, ButtonVariant, BadgeVariant } from '@ironyx/design-system';
+	import { IxButton, IxInput, IxSelect, IxBadge, IxCard, ButtonVariant, BadgeVariant, IxNavigationItem } from '@ironyxlabs/design-system';
 
-	const cities: OptionModel[] = [
-	        { id: 1, label: "Rome" }, 
-			{ id: 2, label: "New York", disabled: true }, 
-			{ id: 3, label: "Budapest" },
-			{ id: 4, label: "London"},
-			{ id: 5, label: "Paris"}
-	]
+	// const cities: OptionModel[] = [
+	//         { id: 1, label: "Rome" }, 
+	// 		{ id: 2, label: "New York", disabled: true }, 
+	// 		{ id: 3, label: "Budapest" },
+	// 		{ id: 4, label: "London"},
+	// 		{ id: 5, label: "Paris"}
+	// ]
 	
 </script>
 <svelte:head>
@@ -103,8 +103,6 @@
             <span class="caption">Input</span>
     
             <div class="bar">
-                <IxInput icon="ri-user-line" placeholder="Write Something"></IxInput>
-                <IxInput icon="ri-user-line" placeholder="Disabled"></IxInput>
             </div>
         </div>   
         
@@ -126,7 +124,6 @@
             <span class="caption">Select</span>
     
             <div class="bar">
-                <IxSelect icon="ri-building-line" options={cities}></IxSelect>
             </div>
         </div>   
         
@@ -136,11 +133,11 @@
             <div style="width: 300px">
                 <IxCard>
                     <div style="display: grid; grid-template-rows: auto auto 1fr; gap: 8px; width: 100%; height: 100%;">
-                        <IxInput icon="ri-user-line" placeholder="Name"></IxInput>
-                        <IxSelect icon="ri-building-line" options={cities}></IxSelect>                        
                     </div>
                 </IxCard>
             </div>
         </div>  
     </div>
+
+    <IxNavigationItem label='Cities' icon='ri-building-line'></IxNavigationItem>
 </div>

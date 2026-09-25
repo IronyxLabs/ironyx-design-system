@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import favicon from '$lib/assets/favicon.svg';
-	import '@ironyx/design-system/styles';
+	import '@ironyxlabs/design-system/styles';
 
 	let { children } = $props();
 	

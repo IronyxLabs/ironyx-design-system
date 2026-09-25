@@ -85,6 +85,13 @@
 
 	--caption__foreground--disabled: var(--foreground--disabled);
 	--label__foreground--disabled: var(--foreground--disabled);
+
+	--navigation_item__foreground: var(--foreground--secondary);
+	--navigation_item__radius: var(--border__radius--md);
+	--navigation_item__background--hover: var(--background--subtle);
+	--navigation_item__foreground--hover: var(--foreground--primary);
+	--navigation_item__background--active: var(--action__primary--active);
+	--navigation_item__foreground--active: var(--action__primary--foreground);
 }
 
 i {
@@ -404,4 +411,35 @@ div.input__container {
 
 .label--disabled {
 	color: var(--label__foreground--disabled);
+}
+
+.navigation_item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: var(--spacing--3);
+    
+    height: 40px;
+
+    align-items: center;
+
+    padding-left: var(--spacing--3);
+    padding-right: var(--spacing--3);
+
+    color: var(--navigation_item__foreground);
+
+    border-radius: var(--navigation_item__radius);
+
+    cursor: pointer;
+}
+
+.navigation_item:hover {
+    background-color: var(--navigation_item__background--hover);
+    
+    color: var(--navigation_item__foreground--hover);
+}
+
+.navigation_item[active=true] {
+    background-color: var(--navigation_item__background--active);
+    
+    color: var(--navigation_item__foreground--active);
 }
