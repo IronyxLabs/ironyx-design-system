@@ -4,7 +4,7 @@ export class Loader {
 	isActive = $derived(this._activationCounter !== 0);
 
 	activate(): void {
-    this._activationCounter++;
+		this._activationCounter++;
 	}
 
 	deactivate(): void {
