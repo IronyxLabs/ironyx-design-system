@@ -29,6 +29,7 @@
 				>Components</a
 			>
 			<a class="menu_item" selected={$page.url.pathname === '/sample'} href="/sample">Sample</a>
+			<a class="menu_item" selected={$page.url.pathname === '/loading'} href="/loading">Loading</a>
 		</nav>
 	</div>
 
@@ -65,7 +66,7 @@
 
 	nav.menu {
 		display: grid;
-		grid-template-columns: auto auto auto auto 1fr;
+		grid-template-columns: auto auto auto auto auto 1fr;
 		gap: 0.8rem;
 	}
 
