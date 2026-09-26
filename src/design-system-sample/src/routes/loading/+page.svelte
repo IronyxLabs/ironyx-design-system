@@ -2,6 +2,7 @@
 	import {
 		ButtonVariant,
 		IxButton,
+		IxLoadingBar,
 		IxLoadingSpinner,
 		LoaderService
 	} from '@ironyxlabs/design-system';
@@ -9,6 +10,7 @@
 	const loaderService = new LoaderService();
 
 	let spinnerShown = false;
+	let barShown = false;
 
 	function showOrHideSpinner(): void {
 		if (spinnerShown) {
@@ -19,6 +21,16 @@
 
 		spinnerShown = !spinnerShown;
 	}
+
+	function showOrHideBar(): void {
+		if (barShown) {
+			loaderService.hide('bar');
+		} else {
+			loaderService.show('bar');
+		}
+
+		barShown = !barShown;
+	}
 </script>
 
 <div class="container">
@@ -27,14 +39,20 @@
 		<IxButton variant={ButtonVariant.Secondary} onclick={showOrHideSpinner}>Show/Hide</IxButton>
 		<IxLoadingSpinner key="spinner"></IxLoadingSpinner>
 	</div>
+
+	<div class="bar">
+		<span class="heading__h4">Bar</span>
+		<IxButton variant={ButtonVariant.Secondary} onclick={showOrHideBar}>Show/Hide</IxButton>
+		<IxLoadingBar key="bar"></IxLoadingBar>
+	</div>
 </div>
 
 <style lang="scss">
 	div {
 		&.container {
 			display: grid;
-			grid-template-columns: auto 1fr;
-			row-gap: var(--spacing--2);
+			grid-template-columns: auto 400px 1fr;
+			column-gap: var(--spacing--2);
 
 			justify-items: center;
 		}
@@ -43,6 +61,14 @@
 			display: grid;
 			grid-template-rows: auto auto auto;
 			row-gap: var(--spacing--2);
+		}
+
+		&.bar {
+			display: grid;
+			grid-template-rows: auto auto auto;
+			row-gap: var(--spacing--2);
+
+			width: 100%;
 		}
 	}
 </style>
