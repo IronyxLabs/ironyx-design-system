@@ -1,0 +1,48 @@
+<script lang="ts">
+	import { loaderStore } from '$lib/services/loader.store.js';
+
+	let { key = '' }: { key: string } = $props();
+
+	const loader = loaderStore.provide(key);
+</script>
+
+{#if loader.isActive}
+	<div class="loader"></div>
+{/if}
+
+<style lang="scss">
+	.loader {
+		--color-1: var(--action__secondary);
+		--color-2: var(--action__primary);
+		--size: 1px;
+
+		width: 100%;
+		height: calc(4.8 * var(--size));
+		display: inline-block;
+		position: relative;
+		background: var(--color-1);
+		overflow: hidden;
+	}
+	.loader::after {
+		content: '';
+		width: calc(96 * var(--size));
+		height: calc(4.8 * var(--size));
+		background: var(--color-2);
+		position: absolute;
+		top: 0;
+		left: 0;
+		box-sizing: border-box;
+		animation: hitZak 1s linear infinite alternate;
+	}
+
+	@keyframes hitZak {
+		0% {
+			left: 0;
+			transform: translateX(-1%);
+		}
+		100% {
+			left: 100%;
+			transform: translateX(-99%);
+		}
+	}
+</style>
