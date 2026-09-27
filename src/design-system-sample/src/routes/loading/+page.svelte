@@ -4,6 +4,7 @@
 		IxButton,
 		IxLoadingBar,
 		IxLoadingSpinner,
+		IxSkeleton,
 		LoaderService
 	} from '@ironyxlabs/design-system';
 
@@ -11,6 +12,7 @@
 
 	let spinnerShown = false;
 	let barShown = false;
+	let skeletonShown = false;
 
 	function showOrHideSpinner(): void {
 		if (spinnerShown) {
@@ -31,6 +33,16 @@
 
 		barShown = !barShown;
 	}
+
+	function showOrHideSkeleton(): void {
+		if (skeletonShown) {
+			loaderService.hide('skeleton');
+		} else {
+			loaderService.show('skeleton');
+		}
+
+		skeletonShown = !skeletonShown;
+	}
 </script>
 
 <div class="container">
@@ -45,13 +57,19 @@
 		<IxButton variant={ButtonVariant.Secondary} onclick={showOrHideBar}>Show/Hide</IxButton>
 		<IxLoadingBar key="bar"></IxLoadingBar>
 	</div>
+
+	<div class="skeleton">
+		<span class="heading__h4">Skeleton</span>
+		<IxButton variant={ButtonVariant.Secondary} onclick={showOrHideSkeleton}>Show/Hide</IxButton>
+		<IxSkeleton key="skeleton"></IxSkeleton>
+	</div>
 </div>
 
 <style lang="scss">
 	div {
 		&.container {
 			display: grid;
-			grid-template-columns: auto 400px 1fr;
+			grid-template-columns: auto 1fr 1fr;
 			column-gap: var(--spacing--2);
 
 			justify-items: center;
@@ -66,6 +84,14 @@
 		&.bar {
 			display: grid;
 			grid-template-rows: auto auto auto;
+			row-gap: var(--spacing--2);
+
+			width: 100%;
+		}
+
+		&.skeleton {
+			display: grid;
+			grid-template-rows: auto auto 40px;
 			row-gap: var(--spacing--2);
 
 			width: 100%;
