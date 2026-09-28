@@ -4,49 +4,49 @@ import { loaderStore } from '$lib/services/loader.store.js';
 import TestLoadingSpinner from '../../../__test_utils__/test_loading_spinner.svelte';
 
 describe('LSP - Loading Spinner', () => {
-  const key = 'loadingSpinnerTest';
-  const createSUT = () => render(TestLoadingSpinner);
+	const key = 'loadingSpinnerTest';
+	const createSUT = () => render(TestLoadingSpinner);
 
-  it('[UNIT][LSP-001]: Show Loading Spinner', () => {
-    // Act
-    const sut = createSUT();
+	it('[UNIT][LSP-001]: Show Loading Spinner', () => {
+		// Act
+		const sut = createSUT();
 
-    // Arrange
-    loaderStore.provide(key).activate();
-    sut.rerender({});
+		// Arrange
+		loaderStore.provide(key).activate();
+		sut.rerender({});
 
-    // Assert
-    expect(sut.container.querySelector('.loader')).toBeInTheDocument();
-    loaderStore.provide(key).deactivate();
-  });
+		// Assert
+		expect(sut.container.querySelector('.loader')).toBeInTheDocument();
+		loaderStore.provide(key).deactivate();
+	});
 
-  it('[UNIT][LSP-002]: Hide Loading Spinner', () => {
-    // Act
-    const sut = createSUT();
+	it('[UNIT][LSP-002]: Hide Loading Spinner', () => {
+		// Act
+		const sut = createSUT();
 
-    loaderStore.provide(key).activate();
-    sut.rerender({});
+		loaderStore.provide(key).activate();
+		sut.rerender({});
 
-    // Arrange
-    loaderStore.provide(key).deactivate();
-    sut.rerender({});
+		// Arrange
+		loaderStore.provide(key).deactivate();
+		sut.rerender({});
 
-    // Assert
-    expect(sut.container.querySelector('.loader')).not.toBeInTheDocument();
-  });
+		// Assert
+		expect(sut.container.querySelector('.loader')).not.toBeInTheDocument();
+	});
 
-  it('[UNIT][LSP-003]: Show Children', () => {
-    // Act
-    const sut = createSUT();
+	it('[UNIT][LSP-003]: Show Children', () => {
+		// Act
+		const sut = createSUT();
 
-    loaderStore.provide(key).activate();
-    sut.rerender({});
+		loaderStore.provide(key).activate();
+		sut.rerender({});
 
-    // Arrange
-    loaderStore.provide(key).deactivate();
-    sut.rerender({});
+		// Arrange
+		loaderStore.provide(key).deactivate();
+		sut.rerender({});
 
-    // Assert
-    expect(sut.getByTestId('divTestContent')).toBeInTheDocument();
-  });
+		// Assert
+		expect(sut.getByTestId('divTestContent')).toBeInTheDocument();
+	});
 });
