@@ -1,13 +1,17 @@
 <script lang="ts">
 	import {
 		IxButton,
-		IxInput,
-		IxSelect,
 		IxBadge,
 		IxCard,
 		ButtonVariant,
 		BadgeVariant,
-		IxNavigationItem
+		IxNavigationItem,
+
+		IxInput,
+
+		IxField
+
+
 	} from '@ironyxlabs/design-system';
 
 	// const cities: OptionModel[] = [
@@ -46,7 +50,6 @@
 
 		<div class="stack">
 			<span class="caption">Input</span>
-
 			<div class="bar"></div>
 		</div>
 
