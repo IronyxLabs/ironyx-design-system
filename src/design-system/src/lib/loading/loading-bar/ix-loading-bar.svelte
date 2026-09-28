@@ -1,13 +1,18 @@
 <script lang="ts">
 	import { loaderStore } from '$lib/services/loader.store.js';
+	import type { Snippet } from 'svelte';
 
-	let { key = '' }: { key: string } = $props();
+	let { key = '', children = undefined }: { key: string; children?: Snippet<[]> } = $props();
 
 	const loader = loaderStore.provide(key);
 </script>
 
 {#if loader.isActive}
 	<div class="loader"></div>
+{:else}
+	{#if children}
+		{@render children()}
+	{/if}
 {/if}
 
 <style lang="scss">
