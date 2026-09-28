@@ -72,14 +72,14 @@
 					hint="Gender of the person"
 					disabled={!form.fields.name.valid}
 				>
-					<IxSelect options={genders}></IxSelect>
+					<IxSelect options={genders} loadingKey="sample"></IxSelect>
 				</IxField>
 				<IxField
 					label="Birthplace"
 					bind:field={form.fields.birthplace}
 					disabled={!form.fields.name.valid}
 				>
-					<IxSelect options={cities}></IxSelect>
+					<IxSelect options={cities} loadingKey="sample"></IxSelect>
 				</IxField>
 
 				<IxButton variant={ButtonVariant.Primary} disabled={!form.valid} onclick={save}
