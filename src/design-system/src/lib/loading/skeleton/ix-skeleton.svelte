@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { loaderStore } from '$lib/services/loader.store.js';
-	import type { Snippet } from 'svelte';
+	import { getContext, type Snippet } from 'svelte';
+	import { LOADING_KEY_CONTEXT } from '../constants.ts';
 
 	let { key = '', children = undefined }: { key: string; children?: Snippet<[]> } = $props();
 
-	const loader = loaderStore.provide(key);
+	const loader = loaderStore.provide(key !== '' ? key : getContext<string>(LOADING_KEY_CONTEXT));
 </script>
 
 {#if loader.isActive}
