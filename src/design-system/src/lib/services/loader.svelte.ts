@@ -5,9 +5,11 @@ export class Loader {
 
 	activate(): void {
 		this._activationCounter++;
+		console.log('Activate');
 	}
 
 	deactivate(): void {
 		this._activationCounter--;
+		console.log('Deactivate');
 	}
 }

@@ -1,8 +1,8 @@
+import { loaderStore } from '$lib/services/loader.store.js';
+import { faker } from '@faker-js/faker';
+import { render } from '@testing-library/svelte';
 import { describe, expect, it } from 'vitest';
 import IxSkeleton from './ix-skeleton.svelte';
-import { render } from '@testing-library/svelte';
-import { faker } from '@faker-js/faker';
-import { loaderStore } from '$lib/services/loader.store.js';
 
 describe('SKL - IxSkeleton', () => {
 	const createSUT = (key: string) => render(IxSkeleton, { key: key });
