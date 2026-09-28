@@ -2,7 +2,7 @@
 	import { loaderStore } from '$lib/services/loader.store.js';
 	import type { Snippet } from 'svelte';
 
-	let { key = '', children = undefined }: { key: string, children?: Snippet<[]> } = $props();
+	let { key = '', children = undefined }: { key: string; children?: Snippet<[]> } = $props();
 
 	const loader = loaderStore.provide(key);
 </script>
@@ -10,9 +10,9 @@
 {#if loader.isActive}
 	<div class="skeleton"></div>
 {:else}
-    {#if children}
-        {@render children()}
-    {/if}
+	{#if children}
+		{@render children()}
+	{/if}
 {/if}
 
 <style lang="scss">

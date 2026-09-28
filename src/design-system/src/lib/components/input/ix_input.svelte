@@ -19,28 +19,29 @@
 </script>
 
 <div class="container">
-    <IxSkeleton key={loadingKey}>
-        <div
-       	class="component__container input__container input body__medium"
-       	disabled={contextFn().disabled}
-       	invalid={contextFn().field.invalid}>
-           	{#if icon !== ''}
-          		<i class={icon}></i>
-           	{/if}
-           	<input
-          		class="input__input"
-          		{placeholder}
-          		disabled={contextFn().disabled}
-          		bind:value={context.field.value}
-           	/>        
-        </div>
-    </IxSkeleton>    
+	<IxSkeleton key={loadingKey}>
+		<div
+			class="component__container input__container input body__medium"
+			disabled={contextFn().disabled}
+			invalid={contextFn().field.invalid}
+		>
+			{#if icon !== ''}
+				<i class={icon}></i>
+			{/if}
+			<input
+				class="input__input"
+				{placeholder}
+				disabled={contextFn().disabled}
+				bind:value={context.field.value}
+			/>
+		</div>
+	</IxSkeleton>
 </div>
 
 <style lang="scss">
-    div {
-        &.container {
-            height: 40px;
-        }
-    }
+	div {
+		&.container {
+			height: 40px;
+		}
+	}
 </style>

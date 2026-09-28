@@ -11,9 +11,7 @@
 		AbstractValidator,
 		ValidationStateHelper,
 		IxCard,
-
 		LoaderService
-
 	} from '@ironyxlabs/design-system';
 	import { gender } from '$lib/models/gender-enum';
 
@@ -46,11 +44,11 @@
 	];
 
 	async function save() {
-	  loadingService.show('sample');
-			setTimeout(() => {
-			loadingService.hide('sample')
+		loadingService.show('sample');
+		setTimeout(() => {
+			loadingService.hide('sample');
 			console.log('Saved');
-			}, 1000);
+		}, 1000);
 	}
 </script>
 
@@ -66,7 +64,7 @@
 					required={true}
 					hint="Full name of the person"
 				>
-					<IxInput loadingKey='sample'></IxInput>
+					<IxInput loadingKey="sample"></IxInput>
 				</IxField>
 				<IxField
 					label="Gender"
@@ -84,10 +82,8 @@
 					<IxSelect options={cities}></IxSelect>
 				</IxField>
 
-				<IxButton
-					variant={ButtonVariant.Primary}
-					disabled={!form.valid}
-					onclick={save}>Save</IxButton
+				<IxButton variant={ButtonVariant.Primary} disabled={!form.valid} onclick={save}
+					>Save</IxButton
 				>
 			</div>
 		</div>
