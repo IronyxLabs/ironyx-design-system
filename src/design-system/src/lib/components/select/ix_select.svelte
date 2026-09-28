@@ -10,7 +10,12 @@
 		options = [],
 		optionTemplate = defaultOptionTemplate,
 		loadingKey = ''
-	}: { icon?: string; options: OptionModel[]; optionTemplate?: Snippet<[OptionModel]>, loadingKey?: string } = $props();
+	}: {
+		icon?: string;
+		options: OptionModel[];
+		optionTemplate?: Snippet<[OptionModel]>;
+		loadingKey?: string;
+	} = $props();
 
 	const contextFn = getContext<() => FieldContext<number>>(FIELD_CONTEXT);
 	const context = contextFn();
@@ -21,24 +26,24 @@
 {/snippet}
 
 <div class="container">
-    <IxSkeleton key={loadingKey}>
-        <div class="component__container select body__medium" invalid={contextFn().field.invalid}>
-       	{#if icon !== ''}
-      		<i class={icon}></i>
-       	{/if}
-       	<select bind:value={context.field.value} disabled={contextFn().disabled}>
-      		{#each options as option (option)}
-     			{@render optionTemplate(option)}
-      		{/each}
-       	</select>
-        </div>            
-    </IxSkeleton>
+	<IxSkeleton key={loadingKey}>
+		<div class="component__container select body__medium" invalid={contextFn().field.invalid}>
+			{#if icon !== ''}
+				<i class={icon}></i>
+			{/if}
+			<select bind:value={context.field.value} disabled={contextFn().disabled}>
+				{#each options as option (option)}
+					{@render optionTemplate(option)}
+				{/each}
+			</select>
+		</div>
+	</IxSkeleton>
 </div>
 
 <style lang="scss">
-    div {
-        &.container {
-            height: 40px;
-        }
-    }
+	div {
+		&.container {
+			height: 40px;
+		}
+	}
 </style>
