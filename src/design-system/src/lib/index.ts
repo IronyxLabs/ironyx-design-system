@@ -9,6 +9,7 @@ export { default as IxNavigationItem } from './components/navigation/ix_navigati
 export { default as IxLoadingSpinner } from './loading/loading-spinner/ix-loading-spinner.svelte';
 export { default as IxLoadingBar } from './loading/loading-bar/ix-loading-bar.svelte';
 export { default as IxSkeleton } from './loading/skeleton/ix-skeleton.svelte';
+export { default as IxLoadingScope } from './loading/loading-scope/ix-loading-scope.svelte';
 export { LoaderService } from './services/loader.service.ts';
 
 export { BadgeVariant } from './components/badge/badge__variant.ts';

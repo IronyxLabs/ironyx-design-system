@@ -11,7 +11,8 @@
 		AbstractValidator,
 		ValidationStateHelper,
 		IxCard,
-		LoaderService
+		LoaderService,
+		IxLoadingScope
 	} from '@ironyxlabs/design-system';
 	import { gender } from '$lib/models/gender-enum';
 
@@ -57,35 +58,37 @@
 		<div class="personal_info">
 			<span class="heading__h4">Personal Information</span>
 
-			<div class="form">
-				<IxField
-					label="Name"
-					bind:field={form.fields.name}
-					required={true}
-					hint="Full name of the person"
-				>
-					<IxInput loadingKey="sample"></IxInput>
-				</IxField>
-				<IxField
-					label="Gender"
-					bind:field={form.fields.gender}
-					hint="Gender of the person"
-					disabled={!form.fields.name.valid}
-				>
-					<IxSelect options={genders} loadingKey="sample"></IxSelect>
-				</IxField>
-				<IxField
-					label="Birthplace"
-					bind:field={form.fields.birthplace}
-					disabled={!form.fields.name.valid}
-				>
-					<IxSelect options={cities} loadingKey="sample"></IxSelect>
-				</IxField>
+			<IxLoadingScope key="sample">
+				<div class="form">
+					<IxField
+						label="Name"
+						bind:field={form.fields.name}
+						required={true}
+						hint="Full name of the person"
+					>
+						<IxInput></IxInput>
+					</IxField>
+					<IxField
+						label="Gender"
+						bind:field={form.fields.gender}
+						hint="Gender of the person"
+						disabled={!form.fields.name.valid}
+					>
+						<IxSelect options={genders}></IxSelect>
+					</IxField>
+					<IxField
+						label="Birthplace"
+						bind:field={form.fields.birthplace}
+						disabled={!form.fields.name.valid}
+					>
+						<IxSelect options={cities}></IxSelect>
+					</IxField>
 
-				<IxButton variant={ButtonVariant.Primary} disabled={!form.valid} onclick={save}
-					>Save</IxButton
-				>
-			</div>
+					<IxButton variant={ButtonVariant.Primary} disabled={!form.valid} onclick={save}
+						>Save</IxButton
+					>
+				</div>
+			</IxLoadingScope>
 		</div>
 	</IxCard>
 
